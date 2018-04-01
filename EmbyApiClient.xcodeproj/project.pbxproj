@@ -353,6 +353,8 @@
 		0A40C8301C26879E0020A7A2 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A40C82B1C26879E0020A7A2 /* SignIn.swift */; };
 		0A40C8311C26879E0020A7A2 /* Startup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A40C82C1C26879E0020A7A2 /* Startup.swift */; };
 		0A40C8321C26879E0020A7A2 /* UserSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A40C82D1C26879E0020A7A2 /* UserSelection.swift */; };
+		0B3C5FF1206C5DBA0061732F /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0FBACB1C0258DC005BB336 /* CocoaAsyncSocket.framework */; };
+		0B3C5FF2206C5DBA0061732F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0FBAC61C01B83C005BB336 /* Alamofire.framework */; };
 		0BAB255A20683969002D72BA /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D3663A1BF12BEF002F2767 /* CocoaAsyncSocket.framework */; };
 		0BAB255B20683969002D72BA /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD39A811BE9E6AD00B2D09A /* Alamofire.framework */; };
 		0BBCFAB5206866BA0067DA14 /* EmbyApiClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8838C5571BC514B500587F8E /* EmbyApiClient.framework */; };
@@ -464,9 +466,7 @@
 		5D0FBAB91C01B4EB005BB336 /* UserPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B76EF1BFACE0F0003A743 /* UserPolicy.swift */; };
 		5D0FBABE1C01B4EB005BB336 /* Emby.ApiClient-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 88CF7C101BC5248E00A33B72 /* Emby.ApiClient-Bridging-Header.h */; };
 		5D0FBABF1C01B4EB005BB336 /* Emby.ApiClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 8838C55A1BC514B500587F8E /* Emby.ApiClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5D0FBAC71C01B83C005BB336 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0FBAC61C01B83C005BB336 /* Alamofire.framework */; };
 		5D0FBACA1C0258D2005BB336 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D3663A1BF12BEF002F2767 /* CocoaAsyncSocket.framework */; };
-		5D0FBACC1C0258DC005BB336 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0FBACB1C0258DC005BB336 /* CocoaAsyncSocket.framework */; };
 		730C994B1C372D7600FE32DF /* UpcomingEpisodesQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730C99471C372BD100FE32DF /* UpcomingEpisodesQuery.swift */; };
 		730C994C1C372D7700FE32DF /* UpcomingEpisodesQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730C99471C372BD100FE32DF /* UpcomingEpisodesQuery.swift */; };
 		730C994D1C372D7B00FE32DF /* UpcomingEpisodesQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730C99471C372BD100FE32DF /* UpcomingEpisodesQuery.swift */; };
@@ -783,8 +783,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5D0FBAC71C01B83C005BB336 /* Alamofire.framework in Frameworks */,
-				5D0FBACC1C0258DC005BB336 /* CocoaAsyncSocket.framework in Frameworks */,
+				0B3C5FF1206C5DBA0061732F /* CocoaAsyncSocket.framework in Frameworks */,
+				0B3C5FF2206C5DBA0061732F /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2239,6 +2239,7 @@
 				SWIFT_OBJC_BRIDGING_HEADER = "Emby.ApiClient/Emby.ApiClient-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALID_ARCHS = arm64;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};
@@ -2273,6 +2274,7 @@
 				SUPPORTED_PLATFORMS = "appletvsimulator appletvos";
 				SWIFT_OBJC_BRIDGING_HEADER = "Emby.ApiClient/Emby.ApiClient-Bridging-Header.h";
 				TARGETED_DEVICE_FAMILY = 3;
+				TVOS_DEPLOYMENT_TARGET = 9.0;
 				VALID_ARCHS = arm64;
 				WATCHOS_DEPLOYMENT_TARGET = 2.0;
 			};

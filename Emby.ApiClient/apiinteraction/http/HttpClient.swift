@@ -51,7 +51,6 @@ public class HttpClient : IAsyncHttpClient {
     }
     
     public func sendCollectionRequest<T : JSONSerializable>(request: HttpRequest, success: @escaping ([T]) -> Void, failure: @escaping (EmbyError) -> Void) {
-        
         Alamofire.request(request)
             .validate { request, response, data in
                 // custom evalution clousre now includes data (allows you to parse data to dig out error messeages

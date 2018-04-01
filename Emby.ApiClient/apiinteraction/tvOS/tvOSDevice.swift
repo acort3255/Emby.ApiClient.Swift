@@ -42,8 +42,8 @@ public class tvOSDevice: DeviceProtocol {
         
         //        self.context = context;
         
-        deviceId = iOSDevice.GetDeviceIdInternal();
-        deviceName = iOSDevice.GetDeviceNameInternal();
+        deviceId = tvOSDevice.GetDeviceIdInternal();
+        deviceName = tvOSDevice.GetDeviceNameInternal();
     }
     
     public init(context: Context, deviceId: String, deviceName: String){

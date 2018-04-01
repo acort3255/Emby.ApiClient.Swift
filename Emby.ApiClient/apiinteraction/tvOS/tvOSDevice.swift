@@ -31,7 +31,7 @@ import UIKit
 //import java.util.ArrayList;
 //import java.util.Observable;
 
-public class tvOSDevice: DeviceProtocol {
+public class iOSDevice: DeviceProtocol {
     
     public final var deviceName: String
     public final var deviceId: String
@@ -42,8 +42,8 @@ public class tvOSDevice: DeviceProtocol {
         
         //        self.context = context;
         
-        deviceId = tvOSDevice.GetDeviceIdInternal();
-        deviceName = tvOSDevice.GetDeviceNameInternal();
+        deviceId = iOSDevice.GetDeviceIdInternal();
+        deviceName = iOSDevice.GetDeviceNameInternal();
     }
     
     public init(context: Context, deviceId: String, deviceName: String){

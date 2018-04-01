@@ -353,6 +353,7 @@
 		0A40C8301C26879E0020A7A2 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A40C82B1C26879E0020A7A2 /* SignIn.swift */; };
 		0A40C8311C26879E0020A7A2 /* Startup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A40C82C1C26879E0020A7A2 /* Startup.swift */; };
 		0A40C8321C26879E0020A7A2 /* UserSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A40C82D1C26879E0020A7A2 /* UserSelection.swift */; };
+		0B13F2972071689E00F5F9A0 /* tvOSDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE553F420715DF0006A4DAA /* tvOSDevice.swift */; };
 		0B3C5FF1206C5DBA0061732F /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0FBACB1C0258DC005BB336 /* CocoaAsyncSocket.framework */; };
 		0B3C5FF2206C5DBA0061732F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0FBAC61C01B83C005BB336 /* Alamofire.framework */; };
 		0BAB255A20683969002D72BA /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D3663A1BF12BEF002F2767 /* CocoaAsyncSocket.framework */; };
@@ -456,7 +457,6 @@
 		5D0FBAAD1C01B4EB005BB336 /* ConnectUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF7E751BC6E71200A33B72 /* ConnectUser.swift */; };
 		5D0FBAAE1C01B4EB005BB336 /* ServerLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889288D61BE90D8000DAD65F /* ServerLocator.swift */; };
 		5D0FBAAF1C01B4EB005BB336 /* SubtitleDownloadOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8AB381BEDA45000ED19CA /* SubtitleDownloadOptions.swift */; };
-		5D0FBAB01C01B4EB005BB336 /* iOSDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889288CE1BE8D9B400DAD65F /* iOSDevice.swift */; };
 		5D0FBAB11C01B4EB005BB336 /* VideoType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8AB441BEDAF2D00ED19CA /* VideoType.swift */; };
 		5D0FBAB21C01B4EB005BB336 /* JsonSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888EFC801BCC4EDC00546DB3 /* JsonSerializer.swift */; };
 		5D0FBAB31C01B4EB005BB336 /* ExternalUrl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04B8AB611BF190A200ED19CA /* ExternalUrl.swift */; };
@@ -1886,6 +1886,7 @@
 				5D0FBA811C01B4EB005BB336 /* MediaStream.swift in Sources */,
 				0A40C8281C2687480020A7A2 /* AuthenticationResult.swift in Sources */,
 				5D0FBA821C01B4EB005BB336 /* MediaSourceInfo.swift in Sources */,
+				0B13F2972071689E00F5F9A0 /* tvOSDevice.swift in Sources */,
 				5D0FBA831C01B4EB005BB336 /* ApiClient.swift in Sources */,
 				5D0FBA841C01B4EB005BB336 /* ImageOptions.swift in Sources */,
 				5D0FBA851C01B4EB005BB336 /* PlayAccess.swift in Sources */,
@@ -1952,7 +1953,6 @@
 				04C23C0C1C167F5B006722ED /* TranscodingProfile.swift in Sources */,
 				0409327E1C29070A00736C7B /* SessionQuery.swift in Sources */,
 				730C99541C374C0C00FE32DF /* EpisodeQuery.swift in Sources */,
-				5D0FBAB01C01B4EB005BB336 /* iOSDevice.swift in Sources */,
 				040932361C2657DD00736C7B /* PlaystateCommand.swift in Sources */,
 				5D0FBAB11C01B4EB005BB336 /* VideoType.swift in Sources */,
 				0409324A1C265A1400736C7B /* SessionInfoDto.swift in Sources */,

@@ -359,6 +359,7 @@
 		0BAB255B20683969002D72BA /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD39A811BE9E6AD00B2D09A /* Alamofire.framework */; };
 		0BBCFAB5206866BA0067DA14 /* EmbyApiClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8838C5571BC514B500587F8E /* EmbyApiClient.framework */; };
 		0BBCFAB8206866F20067DA14 /* EmbyApiClient.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8838C5571BC514B500587F8E /* EmbyApiClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		0BE553F520715DF0006A4DAA /* tvOSDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE553F420715DF0006A4DAA /* tvOSDevice.swift */; };
 		5D0FBA491C01B4EB005BB336 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF7E631BC5C85A00A33B72 /* Context.swift */; };
 		5D0FBA4A1C01B4EB005BB336 /* SubtitlePlaybackMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B76EC1BFACDA50003A743 /* SubtitlePlaybackMode.swift */; };
 		5D0FBA4B1C01B4EB005BB336 /* FileUploadProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 889288D21BE8DCE700DAD65F /* FileUploadProgress.swift */; };
@@ -716,6 +717,7 @@
 		0A40C82B1C26879E0020A7A2 /* SignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		0A40C82C1C26879E0020A7A2 /* Startup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Startup.swift; sourceTree = "<group>"; };
 		0A40C82D1C26879E0020A7A2 /* UserSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSelection.swift; sourceTree = "<group>"; };
+		0BE553F420715DF0006A4DAA /* tvOSDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tvOSDevice.swift; sourceTree = "<group>"; };
 		5D0FBAC41C01B4EB005BB336 /* EmbyApiClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EmbyApiClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D0FBAC61C01B83C005BB336 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/tvOS/Alamofire.framework; sourceTree = "<group>"; };
 		5D0FBACB1C0258DC005BB336 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/tvOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
@@ -1153,6 +1155,14 @@
 			name = dlna;
 			sourceTree = "<group>";
 		};
+		0BE553F320715D79006A4DAA /* tvOS */ = {
+			isa = PBXGroup;
+			children = (
+				0BE553F420715DF0006A4DAA /* tvOSDevice.swift */,
+			);
+			path = tvOS;
+			sourceTree = "<group>";
+		};
 		5D0FBA461C01B3EB005BB336 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1222,6 +1232,7 @@
 				04AFCAD61BD33E0500C95C88 /* discovery */,
 				8838C5631BC517E300587F8E /* connect */,
 				88CF7CC21BC586AE00A33B72 /* http */,
+				0BE553F320715D79006A4DAA /* tvOS */,
 				88CF7CC71BC5887100A33B72 /* iOS */,
 				8838C5661BC5197900587F8E /* QueryStringDictionary.swift */,
 				88CF7E311BC5B08300A33B72 /* SerializedResponse.swift */,
@@ -2132,6 +2143,7 @@
 				0A40C8321C26879E0020A7A2 /* UserSelection.swift in Sources */,
 				0A40C8301C26879E0020A7A2 /* SignIn.swift in Sources */,
 				0A40C8311C26879E0020A7A2 /* Startup.swift in Sources */,
+				0BE553F520715DF0006A4DAA /* tvOSDevice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

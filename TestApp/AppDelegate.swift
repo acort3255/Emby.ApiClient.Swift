@@ -16,7 +16,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var connectionManager: ConnectionManager?
     
-    let device = iOSDevice()
+    let device = tvOSDevice()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
 

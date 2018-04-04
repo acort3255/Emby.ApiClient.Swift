@@ -5,7 +5,7 @@
 
 import Foundation
 
-public struct PlayerStateInfo : JSONSerializable {
+public struct PlayerStateInfo : Codable {
     let positionTicks: Int?
     let canSeek: Bool
     let isPaused: Bool
@@ -43,5 +43,20 @@ public struct PlayerStateInfo : JSONSerializable {
         else {
             return nil
         }
+    }
+    
+    enum CodingKeys: String, CodingKey
+    {
+        case positionTicks = "PositionTicks"
+        case canSeek = "CanSeek"
+        case isPaused = "IsPaused"
+        case isMuted = "IsMuted"
+        case volumeLevel = "VolumeLevel"
+        case audioStreamIndex = "AudioStreamIndex"
+        case subtitleStreamIndex = "SubtitleStreamIndex"
+        case mediaSourceId = "MediaSourceId"
+        case playMethod = "PlayMethod"
+        case repeatMode = "RepeatMode"
+        
     }
 }

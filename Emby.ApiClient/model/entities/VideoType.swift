@@ -5,7 +5,7 @@
 
 import Foundation
 
-public enum VideoType: String {
+public enum VideoType: String, Codable {
     case VideoFile
     case Iso
     case Dvd

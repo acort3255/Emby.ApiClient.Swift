@@ -5,7 +5,7 @@
 
 import Foundation
 
-public enum PlayAccess: Int {
+public enum PlayAccess: Int, Codable {
     case Full
     case None
 }

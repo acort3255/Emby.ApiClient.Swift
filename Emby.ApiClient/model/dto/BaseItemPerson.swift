@@ -5,7 +5,7 @@
 
 import Foundation
 
-public class BaseItemPerson {
+public class BaseItemPerson: Codable {
     let name: String
     var id: String?
     let role: String
@@ -21,5 +21,14 @@ public class BaseItemPerson {
         self.name = name
         self.role = role
         self.type = type
+    }
+    
+    enum CodingKeys: String, CodingKey
+    {
+        case name = "Name"
+        case id = "Id"
+        case role = "Role"
+        case type = "Type"
+        case primaryImageTag = "PrimaryImageTag"
     }
 }

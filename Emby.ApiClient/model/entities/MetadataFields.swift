@@ -5,7 +5,7 @@
 
 import Foundation
 
-public enum MetadataFields {
+public enum MetadataFields: Int, Codable {
     case Cast
     case Genres
     case Keywords

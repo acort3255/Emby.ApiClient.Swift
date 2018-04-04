@@ -5,7 +5,7 @@
 
 import Foundation
 
-public class PublicSystemInfo: JSONSerializable {
+public class PublicSystemInfo: Codable {
     let localAddress: String?
     let wanAddress: String?
     let serverName: String
@@ -48,4 +48,15 @@ public class PublicSystemInfo: JSONSerializable {
         self.operatingSystem = operatingSystem
         self.id = id
     }
+    
+    enum CodingKeys: String, CodingKey
+    {
+        case localAddress = "LocalAddress"
+        case wanAddress = "WanAddress"
+        case serverName = "ServerName"
+        case version = "Version"
+        case operatingSystem = "OperatingSystem"
+        case id = "Id"
+    }
+
 }

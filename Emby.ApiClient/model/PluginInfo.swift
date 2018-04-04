@@ -5,9 +5,9 @@
 
 import Foundation
 
-public struct PluginInfo: JSONSerializable {
+public struct PluginInfo: Codable {
     var name: String?
-    var configurationDateLastModified: NSDate?
+    var configurationDateLastModified: Date?
     var version: String?
     var assemblyFileName: String?
     var configurationFileName: String?
@@ -17,5 +17,17 @@ public struct PluginInfo: JSONSerializable {
     
     public init?(jSON: JSON_Object) {
         fatalError("init(jSON:) has not been implemented: \(jSON)")
+    }
+    
+    enum CodingKeys: String, CodingKey
+    {
+        case name = "Name"
+        case configurationDateLastModified = "ConfigurationDateLastModified"
+        case version = "Version"
+        case assemblyFileName = "AssemblyFileName"
+        case configurationFileName = "ConfigurationFileName"
+        case description = "Description"
+        case id = "Id"
+        case imageUrl = "ImageUrl"
     }
 }

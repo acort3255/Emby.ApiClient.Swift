@@ -5,7 +5,7 @@
 
 import Foundation
 
-public enum ExtraType: Int {
+public enum ExtraType: Int, Codable {
     case Clip = 1
     case Trailer
     case BehindTheScenes

@@ -5,7 +5,7 @@
 
 import Foundation
 
-public enum IsoType {
+public enum IsoType: Int, Codable {
     case Dvd
     case BluRay
 }

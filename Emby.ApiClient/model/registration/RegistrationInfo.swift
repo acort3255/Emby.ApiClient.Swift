@@ -8,32 +8,41 @@
 
 import Foundation
 
-public struct RegistrationInfo: JSONSerializable
+public struct RegistrationInfo: Codable
 {
+    
     let name: String
-    let expirationDate: NSDate
+    let expirationDate: Date
     let trial: Bool
     let registered: Bool
     
-    public init?(jSON: JSON_Object) {
- 
-        //{"Name":"TV","ExpirationDate":"2015-11-15","IsTrial":true,"IsRegistered":false}
-
-        if  let name = jSON["Name"] as? String,
-            let expirationString = jSON["ExpirationDate"] as? String,
-            let trial = jSON["IsTrial"] as? Bool,
-            let registered = jSON["IsRegistered"] as? Bool
-        {
-            self.name = name
-            self.trial = trial
-            self.registered = registered
-            
-            let formatter = DateFormatter()
-            formatter.dateFormat = "yyyy-MM-dd"
-            self.expirationDate = formatter.date(from: expirationString)! as NSDate
-        }
-        else {
-            return nil
-        }
+//    public init?(jSON: JSON_Object) {
+//
+//        //{"Name":"TV","ExpirationDate":"2015-11-15","IsTrial":true,"IsRegistered":false}
+//
+//        if  let name = jSON["Name"] as? String,
+//            let expirationString = jSON["ExpirationDate"] as? String,
+//            let trial = jSON["IsTrial"] as? Bool,
+//            let registered = jSON["IsRegistered"] as? Bool
+//        {
+//            self.name = name
+//            self.trial = trial
+//            self.registered = registered
+//
+//            let formatter = DateFormatter()
+//            formatter.dateFormat = "yyyy-MM-dd"
+//            self.expirationDate = formatter.date(from: expirationString)! as NSDate
+//        }
+//        else {
+//            return nil
+//        }
+//    }
+    
+    enum CodingKeys: String, CodingKey
+    {
+        case name = "Name"
+        case expirationDate = "ExpirationDate"
+        case trial = "Trial"
+        case registered = "Registered"
     }
 }

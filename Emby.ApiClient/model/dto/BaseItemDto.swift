@@ -5,14 +5,14 @@
 
 import Foundation
 
-public class BaseItemDto : JSONSerializable {
+public class BaseItemDto : Codable {
     public var name: String?
     public var serverId: String?
     public var id: String?
     public var etag: String?
     public var playlistItemid: String?
-    public var dateCreated: NSDate?
-    public var dateLastMediaAdded: NSDate?
+    public var dateCreated: Date?
+    public var dateLastMediaAdded: Date?
     public var extraType: ExtraType?
     public var airsBeforeSeasonNumber: Int?
     public var airsAfterSeasonNumber: Int?
@@ -39,7 +39,7 @@ public class BaseItemDto : JSONSerializable {
     public var sortName: String?
     public var forcedSortName: String?
     public var video3dFormat: Video3DFormat?
-    public var premierDate: NSDate?
+    public var premierDate: Date?
     public var externalUrls: [ExternalUrl]?
     public var mediaSources: [MediaSourceInfo]?
     public var criticRating: Float?
@@ -62,7 +62,7 @@ public class BaseItemDto : JSONSerializable {
     public var cumulativeRunTimeTicks: Int?
     public var originalRunTimeTicks: Int?
     public var runTimeTicks: Int?
-    public var playAccess: PlayAccess?
+//    public var playAccess: PlayAccess?
     public var aspectRation: String?
     public var productionYear: Int?
     public var players: Int?
@@ -171,7 +171,7 @@ public class BaseItemDto : JSONSerializable {
     public var locationType: LocationType?
     public var isoType: IsoType?
     public var mediaType: String?
-    public var endDate: NSDate?
+    public var endDate: Date?
     public var homePageUrl: String?
     public var productionLocations: [String]?
     public var budget: Double?
@@ -355,7 +355,7 @@ public class BaseItemDto : JSONSerializable {
     
     public var programId: String?
     public var channelPrimaryImageTag: String?
-    public var startDate: NSDate?
+    public var startDate: Date?
     public var completionPercentage: Double?
     public var isRepeat: Bool?
     public var episodeTitle: String?
@@ -374,5 +374,14 @@ public class BaseItemDto : JSONSerializable {
     public required init?(jSON: JSON_Object) {
         //fatalError("init(jSON:) has not been implemented: \(jSON)")
         self.name = jSON["Name"] as? String
+        self.id = jSON["Id"] as? String
+    }
+    
+    enum CodingKeys: String, CodingKey
+    {
+        case name = "Name"
+        case serverId = "ServerId"
+        case id = "Id"
+
     }
 }

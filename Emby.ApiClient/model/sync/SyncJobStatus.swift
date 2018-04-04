@@ -5,7 +5,7 @@
 
 import Foundation
 
-public enum SyncJobStatus: Int {
+public enum SyncJobStatus: Int, Codable {
     case Queued
     case Converting
     case ReadyToTransfer

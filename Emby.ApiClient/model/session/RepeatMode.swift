@@ -5,7 +5,7 @@
 
 import Foundation
 
-public enum RepeatMode: String {
+public enum RepeatMode: String, Codable {
     case RepeatNone
     case RepeatAll
     case RepeatOne

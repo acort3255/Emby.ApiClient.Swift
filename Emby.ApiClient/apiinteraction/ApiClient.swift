@@ -50,7 +50,7 @@ public class ApiClient: BaseApiClient {
     
     // MARK: - Request Creation and Sending
     
-    private func sendRequest<T: JSONSerializable>(request: HttpRequest, success: @escaping (T) -> Void, failure: @escaping (EmbyError) -> Void) {
+    private func sendRequest<T: Codable>(request: HttpRequest, success: @escaping (T) -> Void, failure: @escaping (EmbyError) -> Void) {
         
         var request = request
         request.addHeaders(newHeaders: httpHeaders)
@@ -58,7 +58,7 @@ public class ApiClient: BaseApiClient {
         httpClient.sendRequest(request: request, success: success, failure: failure)
     }
     
-    private func sendCollectionRequest<Value: JSONSerializable>( request: HttpRequest, success: @escaping ([Value]) -> Void, failure: @escaping (EmbyError) -> Void) {
+    private func sendCollectionRequest<Value: Codable>( request: HttpRequest, success: @escaping ([Value]) -> Void, failure: @escaping (EmbyError) -> Void) {
         
         var request = request
         request.addHeaders(newHeaders: httpHeaders)
@@ -380,7 +380,7 @@ public class ApiClient: BaseApiClient {
 //    
 
     
-    private func getItemFromUrl<T: JSONSerializable>(url: String, success: @escaping (T) -> Void, failure: @escaping (EmbyError) -> Void) {
+    private func getItemFromUrl<T: Codable>(url: String, success: @escaping (T) -> Void, failure: @escaping (EmbyError) -> Void) {
         let urlWithFormat = addDataFormat(url: url)
         
         let request = HttpRequest(url: urlWithFormat, method: .get)
@@ -388,7 +388,7 @@ public class ApiClient: BaseApiClient {
         sendRequest(request: request, success: success, failure: failure)
     }
     
-    private func getItemsFromUrl<Value: JSONSerializable>(url: String, success: @escaping ([Value]) -> Void, failure: @escaping (EmbyError) -> Void) {
+    private func getItemsFromUrl<Value: Codable>(url: String, success: @escaping ([Value]) -> Void, failure: @escaping (EmbyError) -> Void) {
         let urlWithFormat = addDataFormat(url: url)
         
         let request = HttpRequest(url: urlWithFormat, method: .get)

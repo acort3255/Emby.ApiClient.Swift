@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct ConnectUserServer: JSONSerializable
+public struct ConnectUserServer: Codable
 {
     public let id: String
     public let url: String

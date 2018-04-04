@@ -5,7 +5,7 @@
 
 import Foundation
 
-public struct MediaSourceInfo {
+public struct MediaSourceInfo: Codable{
     var mediaProtocol: MediaProtocol?
     var id: String?
     var path: String?
@@ -93,5 +93,11 @@ public struct MediaSourceInfo {
         return mediaStreams
             .filter({$0.type != nil && $0.type! == MediaStreamType.Audio})
             .contains(where: {$0.index != stream.index})
+    }
+    
+    enum CodingKeys: String, CodingKey
+    {
+        case id = "Id"
+        case path = "Path"
     }
 }

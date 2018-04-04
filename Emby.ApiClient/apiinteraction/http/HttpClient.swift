@@ -19,7 +19,7 @@ public class HttpClient : IAsyncHttpClient {
         self.context = context;
     }
     
-    public func sendRequest<T : JSONSerializable>(request: HttpRequest, success: @escaping (T) -> Void, failure: @escaping (EmbyError) -> Void) {
+    public func sendRequest<T : Codable>(request: HttpRequest, success: @escaping (T) -> Void, failure: @escaping (EmbyError) -> Void) {
         
         Alamofire.request(request)
             .validate { request, response, data in
@@ -27,30 +27,52 @@ public class HttpClient : IAsyncHttpClient {
                 return .success
             }
             .responseJSON { response in
-                if case .success(let json) = response.result {
-                    if  let jsonObject = json as? JSON_Object {
-                        
-                        if let object = T(jSON: jsonObject) {
-                            success(object)
-                        }
-                        else {
-                            failure(EmbyError.JsonDeserializationError)
-                        }
-                    }
-                    else {
-                        failure(EmbyError.JsonDeserializationError)
-                    }
-                }
-                else if case .failure(let error) = response.result {
+//                if case .success(let json) = try! JSONDecoder().decode(T.self, from: response.data!){
+//                    if  let jsonObject = json as? JSON_Object {
+//
+//                        if let object = T(jSON: jsonObject) {
+//                            success(object)
+//                        }
+//                        else {
+//                            failure(EmbyError.JsonDeserializationError)
+//                        }
+//                    }
+//                    else {
+//                        failure(EmbyError.JsonDeserializationError)
+//                    }
+//                }
+//                else if case .failure(let error) = response.result {
+//                    if let data = response.data, let str = String(data: data, encoding: String.Encoding.utf8){
+//                        print("Server Error: " + str)
+//                    }
+//                    failure(EmbyError.NetworkRequestError(error.localizedDescription))
+//                }
+                
+                if case .failure(let error) = response.result {
                     if let data = response.data, let str = String(data: data, encoding: String.Encoding.utf8){
                         print("Server Error: " + str)
                     }
                     failure(EmbyError.NetworkRequestError(error.localizedDescription))
+                    return
                 }
+                
+                
+                do{
+                    let object = try EmbyJson.decoder.decode(T.self, from: response.data!)
+                   
+                        success(object)
+                }
+                    
+                catch let error{
+                    print("Date string does not match format expected by formatter: \(error)")
+                    failure(EmbyError.JsonDeserializationError)
+                }
+                
+                
         }
     }
     
-    public func sendCollectionRequest<T : JSONSerializable>(request: HttpRequest, success: @escaping ([T]) -> Void, failure: @escaping (EmbyError) -> Void) {
+    public func sendCollectionRequest<T : Codable>(request: HttpRequest, success: @escaping ([T]) -> Void, failure: @escaping (EmbyError) -> Void) {
         Alamofire.request(request)
             .validate { request, response, data in
                 // custom evalution clousre now includes data (allows you to parse data to dig out error messeages
@@ -88,34 +110,57 @@ public class HttpClient : IAsyncHttpClient {
 //                    failure(EmbyError.NetworkRequestError(error.localizedDescription))
 //                    return
 //                }
-                print("JSON_Object: \(response.result.value as? JSON_Object)")
-                print("JSON_Array: \(response.result.value as? JSON_Array)")
-                print("Raw result value: \(response.result.value)")
+//                print("JSON_Object: \(response.result.value as? JSON_Object)")
+//                print("JSON_Array: \(response.result.value as? JSON_Array)")
+//                print("Raw result value: \(response.result.value)")
                 
                 if let jsonArray = response.result.value as? JSON_Array {
                     
                     var results: [T] = []
                     
-                    for object in jsonArray {
-                        if let jsonObject = object as? JSON_Object, let object = T(jSON: jsonObject) {
-                            results.append(object)
-                        }
+//                    for object in jsonArray {
+//                        do{
+//                            let object = try JSONDecoder().decode(T.self, from: response.data!)
+//                            if let jsonObject = object as? JSON_Object  {
+//                                results.append(object)
+//                            }
+//                        }
+//
+//                        catch let error{
+//                            print("Data string does not match format expected by formatter: \(error)")
+//                        }
+//                    }
+                    
+                    do {
+                        let results = try EmbyJson.decoder.decode([T].self, from: response.data!)
+                        print(results)
+                        success(results)
+                    }
+                    catch let error{
+                        print("JSON_Array: \(response.result.value as? JSON_Array)")
+                        print("Data string does not match format expected by formatter: \(error)")
                     }
                     
-                    print(results)
-                    success(results)
+                    
+                    
                 }
                 else if let jsonArray = (response.result.value as! JSON_Object)["Items"] as? JSON_Array
                 {
-                    var results: [T] = []
                     
-                    for object in jsonArray {
-                        if let jsonObject = object as? JSON_Object, let object = T(jSON: jsonObject) {
-                            results.append(object)
-                        }
+                        
+                    do{
+                        // The automatic conversion from PascalCase to CamelCase is a work in progress
+//                        let decoder = EmbyJson.decoder
+//                        decoder.keyDecodingStrategy = .convertFromUpperCamelCase
+                        let results = try EmbyJson.decoder.decode(QueryResult<T>.self, from: response.data!)
+                        success(results.items!)
+                    }
+                        
+                    catch {
+                        print("Data string does not match format expected by formatter: \(error)")
                     }
                     
-                    success(results)
+                    
                 }
                 else
                 {

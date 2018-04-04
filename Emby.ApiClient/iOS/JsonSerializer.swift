@@ -41,3 +41,65 @@ public class JsonSerializer: IJsonSerializer {
     }
 
 }
+
+public class EmbyJson{
+    static let decoder: JSONDecoder = {
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = .formatted(DateFormatter.iso8601Full)
+        return decoder
+    }()
+}
+
+extension DateFormatter {
+    static let iso8601Full: DateFormatter = {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSS'Z'"
+        formatter.calendar = Calendar(identifier: .iso8601)
+        formatter.timeZone = TimeZone(secondsFromGMT: 0)
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        return formatter
+    }()
+}
+
+struct AnyCodingKey : CodingKey {
+    
+    var stringValue: String
+    var intValue: Int?
+    
+    init(_ base: CodingKey) {
+        self.init(stringValue: base.stringValue, intValue: base.intValue)
+    }
+    
+    init(stringValue: String) {
+        self.stringValue = stringValue
+    }
+    
+    init(intValue: Int) {
+        self.stringValue = "\(intValue)"
+        self.intValue = intValue
+    }
+    
+    init(stringValue: String, intValue: Int?) {
+        self.stringValue = stringValue
+        self.intValue = intValue
+    }
+}
+
+extension JSONDecoder.KeyDecodingStrategy {
+    
+    static var convertFromUpperCamelCase: JSONDecoder.KeyDecodingStrategy {
+        return .custom { codingKeys in
+            
+            var key = AnyCodingKey(codingKeys.last!)
+            
+            // lowercase first letter
+            if let firstChar = key.stringValue.first {
+                let i = key.stringValue.startIndex
+                key.stringValue.replaceSubrange(
+                    i ... i, with: String(firstChar).lowercased()
+                )
+            }
+            return key
+        }
+    }
+}

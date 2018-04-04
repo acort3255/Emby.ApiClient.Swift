@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct EmptyResponse: JSONSerializable
+public struct EmptyResponse: JSONSerializable, Codable
 {
     public init?(jSON: JSON_Object) {
         

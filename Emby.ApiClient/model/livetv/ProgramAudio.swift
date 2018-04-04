@@ -5,7 +5,7 @@
 
 import Foundation
 
-public enum ProgramAudio {
+public enum ProgramAudio: Int, Codable {
     case Mono
     case Stereo
     case Dolby

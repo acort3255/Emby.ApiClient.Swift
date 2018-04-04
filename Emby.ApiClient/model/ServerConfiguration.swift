@@ -5,7 +5,7 @@
 
 import Foundation
 
-public struct ServerConfiguration: JSONSerializable {
+public struct ServerConfiguration: Codable {
     var enableUPnP: Bool?
     var publicPort: Int?
     var publicHttpsPort: Int?
@@ -36,13 +36,13 @@ public struct ServerConfiguration: JSONSerializable {
     var dashboardSourcePath: String?
     var mergeMetadataAndImagesByName: Bool?
     var enableStandaloneMetadata: Bool?
-    var metadataOptions: [AnyObject]?
+//    var metadataOptions: [AnyObject]?
     var enableAutomaticRestart: Bool?
-    var pathSubstitution: [AnyObject]?
+//    var pathSubstitution: [AnyObject]?
     var serverName: String?
     var wanDdns: String?
     var UICulture: String?
-    var peopleMetadataOptions: [AnyObject]?
+//    var peopleMetadataOptions: [AnyObject]?
     var findInternetTrailers: Bool?
     var insecureApps9: [String]?
     var saveMetadataHidden: Bool?
@@ -287,5 +287,59 @@ public struct ServerConfiguration: JSONSerializable {
         //    tempVar45.setType(ImageType.Thumb);
         //    tempVar41.setImageOptions(new ImageOption[] {tempVar42, tempVar43, tempVar44, tempVar45});
         //    setMetadataOptions(new MetadataOptions[] {tempVar, tempVar2, tempVar10, tempVar18, tempVar25, tempVar28, tempVar33, tempVar41});
+    }
+    
+    enum CodingKeys: String, CodingKey
+    {
+        case enableUPnP = "EnableUPnP"
+        case publicPort = "PublicPort"
+        case publicHttpsPort = "PublicHttpsPort"
+        case httpServerPortNumber = "HttpServerPortNumber"
+        case httpsPortNumber = "HttpsPortNumber"
+        case enableHttps = "EnableHttps"
+        case certificatePath = "CertificatePath"
+        case enableInternetProviders = "EnableInternetProviders"
+        case isPortAuthorized = "IsPortAuthorized"
+        case itemsByNamePath = "ItemsByNamePath"
+        case metadataPath = "MetadataPath"
+        case seasonZeroDisplayName = "SeasonZeroDisplayName"
+        case saveLocalMeta = "SaveLocalMeta"
+        case disableStartupScan = "DisableStartupScan"
+        case enableUserViews = "EnableUserViews"
+        case enableLibraryMetadataSubFolder = "EnableLibraryMetadataSubFolder"
+        case preferredMetadataLanguage = "PreferredMetadataLanguage"
+        case metadataCountryCode = "MetadataCountryCode"
+        case sortReplaceCharacters = "SortReplaceCharacters"
+        case sortRemoveCharacters = "SortRemoveCharacters"
+        case sortRemoveWords = "SortRemoveWords"
+        case minResumePct = "MinResumePct"
+        case maxResumePct = "MaxResumePct"
+        case minResumeDurationSeconds = "MinResumeDurationSeconds"
+        case realtimeLibraryMonitorDelay = "RealtimeLibraryMonitorDelay"
+        case enableDashboardResponseCaching = "EnableDashboardResponseCaching"
+        case enableDashboardResourceMinification = "EnableDashboardResourceMinification"
+        case dashboardSourcePath = "DashboardSourcePath"
+        case mergeMetadataAndImagesByName = "MergeMetadataAndImagesByName"
+        case enableStandaloneMetadata = "EnableStandaloneMetadata"
+//        case metadataOptions = "MetadataOptions"
+        case enableAutomaticRestart = "EnableAutomaticRestart"
+//        case pathSubstitution = "PathSubstitution"
+        case serverName = "ServerName"
+        case wanDdns = "wanDdns"
+        case UICulture = "UICulture"
+//        case peopleMetadataOptions = "PeopleMetadataOptions"
+        case findInternetTrailers = "FindInternetTrailers"
+        case insecureApps9 = "InsecureApps9"
+        case saveMetadataHidden = "SaveMetadataHidden"
+        case enableAudioArchiveFiles = "EnableAudioArchiveFiles"
+        case enableVideoArchiveFiles = "EnableVideoArchiveFiles"
+        case remoteClientBitrateLimit = "RemoteClientBitrateLimit"
+        case denyIFrameEmbedding = "DenyIFrameEmbedding"
+        case sharingExpirationDays = "SharingExpirationDays"
+        case disableXmlSavers = "DisableXmlSavers"
+        case enableWindowsShortcuts = "EnableWindowsShortcuts"
+        case enableVideoFrameByFrameAnalysis = "EnableVideoFrameByFrameAnalysis"
+        case enableDateLastRefresh = "EnableDateLastRefresh"
+        case migrations = "Migrations"
     }
 }

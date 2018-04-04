@@ -355,6 +355,9 @@
 		0A40C8321C26879E0020A7A2 /* UserSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A40C82D1C26879E0020A7A2 /* UserSelection.swift */; };
 		0B13F2972071689E00F5F9A0 /* tvOSDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE553F420715DF0006A4DAA /* tvOSDevice.swift */; };
 		0B13F2A020716BFF00F5F9A0 /* tvOSDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE553F420715DF0006A4DAA /* tvOSDevice.swift */; };
+		0B35308820758A61009923A1 /* QueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3530862075863B009923A1 /* QueryResult.swift */; };
+		0B35308920758A61009923A1 /* QueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3530862075863B009923A1 /* QueryResult.swift */; };
+		0B35308A20758A62009923A1 /* QueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3530862075863B009923A1 /* QueryResult.swift */; };
 		0B3C5FF1206C5DBA0061732F /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0FBACB1C0258DC005BB336 /* CocoaAsyncSocket.framework */; };
 		0B3C5FF2206C5DBA0061732F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0FBAC61C01B83C005BB336 /* Alamofire.framework */; };
 		0BAB255A20683969002D72BA /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D3663A1BF12BEF002F2767 /* CocoaAsyncSocket.framework */; };
@@ -717,6 +720,7 @@
 		0A40C82B1C26879E0020A7A2 /* SignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		0A40C82C1C26879E0020A7A2 /* Startup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Startup.swift; sourceTree = "<group>"; };
 		0A40C82D1C26879E0020A7A2 /* UserSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSelection.swift; sourceTree = "<group>"; };
+		0B3530862075863B009923A1 /* QueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryResult.swift; sourceTree = "<group>"; };
 		0BE553F420715DF0006A4DAA /* tvOSDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tvOSDevice.swift; sourceTree = "<group>"; };
 		5D0FBAC41C01B4EB005BB336 /* EmbyApiClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EmbyApiClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D0FBAC61C01B83C005BB336 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/tvOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -1061,6 +1065,7 @@
 				730C99511C374C0C00FE32DF /* EpisodeQuery.swift */,
 				730C99561C374F1A00FE32DF /* SeasonQuery.swift */,
 				7352DE451C3CA8A50004BB0B /* PersonsQuery.swift */,
+				0B3530862075863B009923A1 /* QueryResult.swift */,
 			);
 			name = querying;
 			sourceTree = "<group>";
@@ -1707,6 +1712,7 @@
 				048EAE0A1C3433C700BE521F /* ConnectionState.swift in Sources */,
 				048EADB91C34336400BE521F /* StringHelpers.swift in Sources */,
 				048EADEB1C3433B400BE521F /* StudioDto.swift in Sources */,
+				0B35308A20758A62009923A1 /* QueryResult.swift in Sources */,
 				048EADF01C3433BB00BE521F /* DeviceIdentification.swift in Sources */,
 				040932271C26547D00736C7B /* RemoteLogoutReason.swift in Sources */,
 				048E0CBD1C0955ED0001081F /* MediaSourceInfoTests.swift in Sources */,
@@ -1923,6 +1929,7 @@
 				0409322E1C26572200736C7B /* PlayRequest.swift in Sources */,
 				5D0FBA9D1C01B4EB005BB336 /* SimilarItemsQuery.swift in Sources */,
 				5D0FBA9E1C01B4EB005BB336 /* SubtitleDeliveryMethod.swift in Sources */,
+				0B35308920758A61009923A1 /* QueryResult.swift in Sources */,
 				04C23C151C1680E1006722ED /* ContainerProfile.swift in Sources */,
 				04C23BEA1C096ACC006722ED /* DeviceIdentification.swift in Sources */,
 				04C23C0F1C16801B006722ED /* TranscodeSeekInfo.swift in Sources */,
@@ -2105,6 +2112,7 @@
 				7352DE521C3CBA550004BB0B /* ServerConfiguration.swift in Sources */,
 				88CF7E701BC6E0C100A33B72 /* PinStatusResult.swift in Sources */,
 				04B8AB6B1BF1971B00ED19CA /* RecordingStatus.swift in Sources */,
+				0B35308820758A61009923A1 /* QueryResult.swift in Sources */,
 				040932651C26605B00736C7B /* SessionUpdatesEventArgs.swift in Sources */,
 				048EAE281C34E0E400BE521F /* ItemCounts.swift in Sources */,
 				88CF7E5A1BC5BF9E00A33B72 /* ConnectPassword.swift in Sources */,

@@ -160,7 +160,7 @@ public class ServerLocator: NSObject, ServerDiscoveryProtocol, GCDAsyncUdpSocket
         print("ServerLocator >>> Broadcast response from server: \(String(describing: sock.localAddress())): \(String(describing: json))")
         
         do {
-            if let serverInfo: ServerDiscoveryInfo = try JsonSerializer().DeserializeFromString( text: json!, type:nil) {
+            if let serverInfo: ServerDiscoveryInfo = try! JSONDecoder().decode(ServerDiscoveryInfo.self, from: data) {
                 
                 self.serverDiscoveryInfo.insert(serverInfo)
             }

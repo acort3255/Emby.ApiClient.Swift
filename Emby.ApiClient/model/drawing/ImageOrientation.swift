@@ -5,7 +5,7 @@
 
 import Foundation
 
-public enum ImageOrientation: Int {
+public enum ImageOrientation: Int, Codable {
     case TopLeft = 1
     case TopRight
     case BottomRight

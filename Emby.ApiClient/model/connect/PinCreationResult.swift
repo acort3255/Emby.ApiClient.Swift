@@ -9,7 +9,7 @@
 import Foundation
 //package mediabrowser.model.connect;
 
-public struct PinCreationResult: JSONSerializable
+public struct PinCreationResult: Codable
 {
     public var pin: String?
     public var deviceId: String?

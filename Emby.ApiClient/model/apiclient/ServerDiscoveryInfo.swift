@@ -5,7 +5,7 @@
 
 import Foundation
 
-public class ServerDiscoveryInfo: JSONSerializable {
+public class ServerDiscoveryInfo: Codable {
     let address: String
     let id: String
     let name: String
@@ -30,6 +30,13 @@ public class ServerDiscoveryInfo: JSONSerializable {
         let dict = ["Address" : address, "Id": id, "Name": name]
         let jsonData = try! JSONSerialization.data(withJSONObject: dict, options: JSONSerialization.WritingOptions.prettyPrinted)
         return String(data: jsonData, encoding: String.Encoding.ascii)!
+    }
+    
+    enum CodingKeys: String, CodingKey
+    {
+        case address = "Address"
+        case id = "Id"
+        case name = "Name"
     }
 }
 

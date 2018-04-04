@@ -5,7 +5,7 @@
 
 import Foundation
 
-public enum LocationType: Int {
+public enum LocationType: Int, Codable {
     case FileSystem = 0
     case Remote
     case Virtual

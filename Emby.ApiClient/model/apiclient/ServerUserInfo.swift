@@ -5,23 +5,30 @@
 
 import Foundation
 
-public class ServerUserInfo: NSObject, NSCoding {
-    public func encode(with aCoder: NSCoder) {
-    }
-    
-    var id: String
-    var isSignedInOffline: Bool
-    
-    override public var hashValue: Int {
-        get {
-            return id.hashValue
+public class ServerUserInfo: Codable, Equatable, Hashable {
+    public var hashValue: Int = 0
+    {
+        didSet{
+            hashValue = id.hashValue
         }
     }
     
-    public init(id: String, isSignedInOffline: Bool) {
+    
+    public init(id: String, isSignedInOffline: Bool)
+    {
         self.id = id
         self.isSignedInOffline = isSignedInOffline
     }
+    
+    var id: String = ""
+    var isSignedInOffline: Bool = false
+    
+    enum CodingKeys: String, CodingKey
+    {
+        case id = "Id"
+        case isSignedInOffline = "IsSignedInOffline"
+    }
+
     
     // MARK: NSObject
     
@@ -34,22 +41,26 @@ public class ServerUserInfo: NSObject, NSCoding {
     
     // MARK: NSCoding
     
-    public required convenience init?(coder aDecoder: NSCoder) {
-        guard let id = aDecoder.decodeObject(forKey: "id") as? String
-            else {
-                return nil
-        }
-        
-        self.init(id: id, isSignedInOffline: aDecoder.decodeBool(forKey: "isSignedInOffline"))
-    }
-    
-    public func encodeWithCoder(aCoder: NSCoder) {
-        aCoder.encode(self.id, forKey: "id")
-        aCoder.encode(self.isSignedInOffline, forKey: "isSignedInOffline")
-    }
+//    public required convenience init?(coder aDecoder: NSCoder) {
+//        guard let id = aDecoder.decodeObject(forKey: "id") as? String
+//            else {
+//                return nil
+//        }
+//
+//        self.init(id: id, isSignedInOffline: aDecoder.decodeBool(forKey: "isSignedInOffline"))
+//    }
+//
+//    public func encodeWithCoder(aCoder: NSCoder) {
+//        aCoder.encode(self.id, forKey: "id")
+//        aCoder.encode(self.isSignedInOffline, forKey: "isSignedInOffline")
+//    }
     
     //MARK: - Equatable
-    override public func isEqual(_ object: Any?) -> Bool {
-        return id == (object as? ServerUserInfo)?.id
+//    override public func isEqual(_ object: Any?) -> Bool {
+//        return id == (object as? ServerUserInfo)?.id
+//    }
+    
+    public static func == (lhs: ServerUserInfo, rhs: ServerUserInfo) -> Bool {
+        return lhs.id == rhs.id
     }
 }

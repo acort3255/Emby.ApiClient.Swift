@@ -5,8 +5,13 @@
 
 import Foundation
 
-public struct MediaUrl {
+public struct MediaUrl: Codable {
     var url: String?
     var name: String?
-    var videoSize: VideoSize?
+    
+    enum CodingKeys: String, CodingKey
+    {
+        case url = "Url"
+        case name = "Name"
+    }
 }

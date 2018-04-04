@@ -5,7 +5,7 @@
 
 import Foundation
 
-public struct MediaStream {
+public struct MediaStream: Codable {
     var codec: String?
     var codecTag: String?
     var language: String?
@@ -64,4 +64,9 @@ public struct MediaStream {
     var isAnamorphic: Bool?
     var isCabac: Bool?
     var keyFrames: [Int]?
+    
+    enum CodingKeys: String, CodingKey
+    {
+        case codec = "Codec"
+    }
 }

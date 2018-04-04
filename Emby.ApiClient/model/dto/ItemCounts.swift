@@ -5,7 +5,7 @@
 
 import Foundation
 
-public struct ItemCounts : JSONSerializable {
+public struct ItemCounts : Codable {
     var movieCount = 0
     var seriesCount = 0
     var episodeCount = 0

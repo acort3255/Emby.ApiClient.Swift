@@ -443,7 +443,7 @@ public class ConnectionManager: ConnectionManagerProtocol {
         server.importInfo(systemInfo: systemInfo)
         
         if options.updateDateLastAccessed {
-            server.dateLastAccessed = NSDate()
+            server.dateLastAccessed = Date()
         }
         
         server.lastConnectionMode = connectionMode
@@ -581,7 +581,7 @@ public class ConnectionManager: ConnectionManagerProtocol {
         let credentials = credentialProvider.getCredentials()
         
         if options.updateDateLastAccessed {
-            server.dateLastAccessed = NSDate()
+            server.dateLastAccessed = Date()
         }
         
         if saveCredentials {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct ConnectAuthenticationResult: JSONSerializable
+public struct ConnectAuthenticationResult: Codable
 {
     public let user: ConnectUser
     public let accessToken: String

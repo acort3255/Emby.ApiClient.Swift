@@ -5,7 +5,7 @@
 
 import Foundation
 
-public enum ImageType: String {
+public enum ImageType: String, Codable {
     case Primary
     case Art
     case Backdrop

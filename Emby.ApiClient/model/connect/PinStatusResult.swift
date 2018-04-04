@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct PinStatusResult: JSONSerializable
+public struct PinStatusResult: Codable
 {
     public let pin: String
     public let confirmed: Bool

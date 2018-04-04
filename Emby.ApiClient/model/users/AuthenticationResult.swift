@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct AuthenticationResult : JSONSerializable {
+public struct AuthenticationResult : Codable {
     public let user: UserDto
     public let sessionInfo: SessionInfoDto
     public let accessToken: String
@@ -30,5 +30,13 @@ public struct AuthenticationResult : JSONSerializable {
         else {
             return nil
         }
+    }
+    
+    enum CodingKeys: String, CodingKey
+    {
+        case user = "User"
+        case sessionInfo = "SessionInfo"
+        case accessToken = "AccessToken"
+        case serverId = "ServerId"
     }
 }

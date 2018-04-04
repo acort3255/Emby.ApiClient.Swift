@@ -62,4 +62,8 @@ public class SystemInfo: PublicSystemInfo {
     public required init?(jSON: JSON_Object) {
         fatalError("init(jSON:) has not been implemented: \(jSON)")
     }
+    
+    required public init(from decoder: Decoder) throws {
+        fatalError("init(from:) has not been implemented")
+    }
 }

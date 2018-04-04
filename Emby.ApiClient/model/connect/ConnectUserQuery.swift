@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct ConnectUserQuery: JSONSerializable
+public struct ConnectUserQuery: Codable
 {
     public var id: String?
     public var name: String?

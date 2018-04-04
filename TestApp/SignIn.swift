@@ -40,6 +40,7 @@ class SignIn: UITableViewController {
 //            itemQuery.sortBy = [SortOrder.Descending.rawValue]
             itemQuery.sortBy = ["DateCreated"]
             itemQuery.sortOrder = SortOrder.Descending
+            
 //             Get media only, don't return folder items
             itemQuery.filters = [ItemFilter.IsNotFolder]
             itemQuery.enableTotalRecordCount = false;
@@ -49,6 +50,8 @@ class SignIn: UITableViewController {
                 for item in itemResults
                 {
                     print("Item results: \(item.name)")
+                    let url = self.apiClient.getImageUrl(item: item, options: ImageOptions())
+                    print(url)
                 }
             }, failure: { (error) in
                 print("Failed to get items: \(error)")

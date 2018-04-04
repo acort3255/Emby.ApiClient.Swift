@@ -5,7 +5,7 @@
 
 import Foundation
 
-public struct SessionInfoDto : JSONSerializable {
+public struct SessionInfoDto : Codable {
       var supportedCommands = [String]()
       var queueableMediaTypes:[String]? = [String]()
       var playableMediaTypes = [String]()
@@ -87,4 +87,28 @@ public struct SessionInfoDto : JSONSerializable {
             return nil
         }
     }
+    
+    enum CodingKeys: String, CodingKey
+    {
+        case supportedCommands = "SupportedCommands"
+        case queueableMediaTypes = "QueueableMediaTypes"
+        case playableMediaTypes = "PlayableMediaTypes"
+        case id = "Id"
+        case userId = "UserId"
+        case userPrimaryImageTag = "UserPrimaryImageTag"
+        case userName = "UserName"
+        //    var additionalUsers = [SessionUserInfo]()
+        case applicationVersion = "ApplicationVersion"
+        case client = "Client"
+        case lastActivityDate = "LastActivityDate"
+        //    let nowViewingItem: BaseItemInfo
+        case deviceName = "DeviceName"
+        //    let nowPlayingItem: BaseItemInfo
+        case deviceId = "DeviceId"
+        case appIconUrl = "AppIconUrl"
+        case supportsRemoteControl = "SupportsRemoteControl"
+        case playState = "PlayState"
+        //    let transcodingInfo: TranscodingInfo
+    }
+
 }

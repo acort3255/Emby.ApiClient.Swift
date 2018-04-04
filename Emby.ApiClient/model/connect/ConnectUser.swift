@@ -8,7 +8,7 @@
 
 import Foundation
 
-public struct ConnectUser: JSONSerializable
+public struct ConnectUser: Codable
 {
     public let id: String
     public let name: String

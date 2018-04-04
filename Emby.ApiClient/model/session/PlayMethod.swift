@@ -5,7 +5,7 @@
 
 import Foundation
 
-public enum PlayMethod: Int {
+public enum PlayMethod: Int, Codable {
     case Transcode
     case DirectStream
     case DirectPlay

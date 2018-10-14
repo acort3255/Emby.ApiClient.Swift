@@ -353,15 +353,12 @@
 		0A40C8301C26879E0020A7A2 /* SignIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A40C82B1C26879E0020A7A2 /* SignIn.swift */; };
 		0A40C8311C26879E0020A7A2 /* Startup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A40C82C1C26879E0020A7A2 /* Startup.swift */; };
 		0A40C8321C26879E0020A7A2 /* UserSelection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A40C82D1C26879E0020A7A2 /* UserSelection.swift */; };
+		0B0AF7F321740C3C0042DA27 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B0AF7F221740C3C0042DA27 /* Alamofire.framework */; };
 		0B13F2972071689E00F5F9A0 /* tvOSDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE553F420715DF0006A4DAA /* tvOSDevice.swift */; };
 		0B13F2A020716BFF00F5F9A0 /* tvOSDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE553F420715DF0006A4DAA /* tvOSDevice.swift */; };
 		0B35308820758A61009923A1 /* QueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3530862075863B009923A1 /* QueryResult.swift */; };
 		0B35308920758A61009923A1 /* QueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3530862075863B009923A1 /* QueryResult.swift */; };
 		0B35308A20758A62009923A1 /* QueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3530862075863B009923A1 /* QueryResult.swift */; };
-		0B3C5FF1206C5DBA0061732F /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0FBACB1C0258DC005BB336 /* CocoaAsyncSocket.framework */; };
-		0B3C5FF2206C5DBA0061732F /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D0FBAC61C01B83C005BB336 /* Alamofire.framework */; };
-		0BAB255A20683969002D72BA /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D3663A1BF12BEF002F2767 /* CocoaAsyncSocket.framework */; };
-		0BAB255B20683969002D72BA /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD39A811BE9E6AD00B2D09A /* Alamofire.framework */; };
 		0BBCFAB5206866BA0067DA14 /* EmbyApiClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8838C5571BC514B500587F8E /* EmbyApiClient.framework */; };
 		0BBCFAB8206866F20067DA14 /* EmbyApiClient.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8838C5571BC514B500587F8E /* EmbyApiClient.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		5D0FBA491C01B4EB005BB336 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF7E631BC5C85A00A33B72 /* Context.swift */; };
@@ -470,7 +467,6 @@
 		5D0FBAB91C01B4EB005BB336 /* UserPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 047B76EF1BFACE0F0003A743 /* UserPolicy.swift */; };
 		5D0FBABE1C01B4EB005BB336 /* Emby.ApiClient-Bridging-Header.h in Headers */ = {isa = PBXBuildFile; fileRef = 88CF7C101BC5248E00A33B72 /* Emby.ApiClient-Bridging-Header.h */; };
 		5D0FBABF1C01B4EB005BB336 /* Emby.ApiClient.h in Headers */ = {isa = PBXBuildFile; fileRef = 8838C55A1BC514B500587F8E /* Emby.ApiClient.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5D0FBACA1C0258D2005BB336 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 88D3663A1BF12BEF002F2767 /* CocoaAsyncSocket.framework */; };
 		730C994B1C372D7600FE32DF /* UpcomingEpisodesQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730C99471C372BD100FE32DF /* UpcomingEpisodesQuery.swift */; };
 		730C994C1C372D7700FE32DF /* UpcomingEpisodesQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730C99471C372BD100FE32DF /* UpcomingEpisodesQuery.swift */; };
 		730C994D1C372D7B00FE32DF /* UpcomingEpisodesQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 730C99471C372BD100FE32DF /* UpcomingEpisodesQuery.swift */; };
@@ -526,7 +522,6 @@
 		88CF7E741BC6E5B500A33B72 /* ConnectUserQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF7E731BC6E5B500A33B72 /* ConnectUserQuery.swift */; };
 		88CF7E761BC6E71200A33B72 /* ConnectUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF7E751BC6E71200A33B72 /* ConnectUser.swift */; };
 		88CF7E781BC6E86F00A33B72 /* ConnectUserServer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88CF7E771BC6E86F00A33B72 /* ConnectUserServer.swift */; };
-		88F411E81BECAA59000A7E7E /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DD39A811BE9E6AD00B2D09A /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -720,12 +715,10 @@
 		0A40C82B1C26879E0020A7A2 /* SignIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignIn.swift; sourceTree = "<group>"; };
 		0A40C82C1C26879E0020A7A2 /* Startup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Startup.swift; sourceTree = "<group>"; };
 		0A40C82D1C26879E0020A7A2 /* UserSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSelection.swift; sourceTree = "<group>"; };
+		0B0AF7F221740C3C0042DA27 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/tvOS/Alamofire.framework; sourceTree = "<group>"; };
 		0B3530862075863B009923A1 /* QueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryResult.swift; sourceTree = "<group>"; };
 		0BE553F420715DF0006A4DAA /* tvOSDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tvOSDevice.swift; sourceTree = "<group>"; };
 		5D0FBAC41C01B4EB005BB336 /* EmbyApiClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EmbyApiClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D0FBAC61C01B83C005BB336 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/tvOS/Alamofire.framework; sourceTree = "<group>"; };
-		5D0FBACB1C0258DC005BB336 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/tvOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
-		5DD39A811BE9E6AD00B2D09A /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		730C99471C372BD100FE32DF /* UpcomingEpisodesQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpcomingEpisodesQuery.swift; sourceTree = "<group>"; };
 		730C99511C374C0C00FE32DF /* EpisodeQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeQuery.swift; sourceTree = "<group>"; };
 		730C99561C374F1A00FE32DF /* SeasonQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SeasonQuery.swift; sourceTree = "<group>"; };
@@ -773,7 +766,6 @@
 		88CF7E731BC6E5B500A33B72 /* ConnectUserQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectUserQuery.swift; sourceTree = "<group>"; };
 		88CF7E751BC6E71200A33B72 /* ConnectUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectUser.swift; sourceTree = "<group>"; };
 		88CF7E771BC6E86F00A33B72 /* ConnectUserServer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectUserServer.swift; sourceTree = "<group>"; };
-		88D3663A1BF12BEF002F2767 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -789,8 +781,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0B3C5FF1206C5DBA0061732F /* CocoaAsyncSocket.framework in Frameworks */,
-				0B3C5FF2206C5DBA0061732F /* Alamofire.framework in Frameworks */,
+				0B0AF7F321740C3C0042DA27 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -798,8 +789,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				88F411E81BECAA59000A7E7E /* Alamofire.framework in Frameworks */,
-				5D0FBACA1C0258D2005BB336 /* CocoaAsyncSocket.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -807,8 +796,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0BAB255A20683969002D72BA /* CocoaAsyncSocket.framework in Frameworks */,
-				0BAB255B20683969002D72BA /* Alamofire.framework in Frameworks */,
 				0BBCFAB5206866BA0067DA14 /* EmbyApiClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1160,23 +1147,20 @@
 			name = dlna;
 			sourceTree = "<group>";
 		};
+		0B0AF7F121740C3B0042DA27 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0B0AF7F221740C3C0042DA27 /* Alamofire.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		0BE553F320715D79006A4DAA /* tvOS */ = {
 			isa = PBXGroup;
 			children = (
 				0BE553F420715DF0006A4DAA /* tvOSDevice.swift */,
 			);
 			path = tvOS;
-			sourceTree = "<group>";
-		};
-		5D0FBA461C01B3EB005BB336 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				5D0FBACB1C0258DC005BB336 /* CocoaAsyncSocket.framework */,
-				5D0FBAC61C01B83C005BB336 /* Alamofire.framework */,
-				88D3663A1BF12BEF002F2767 /* CocoaAsyncSocket.framework */,
-				5DD39A811BE9E6AD00B2D09A /* Alamofire.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		7352DE4A1C3CB4350004BB0B /* plugins */ = {
@@ -1194,7 +1178,7 @@
 				888EFC981BCC52CD00546DB3 /* TestApp */,
 				0479CFDA1C01653800DFCEFB /* EmbyTests */,
 				8838C5581BC514B500587F8E /* Products */,
-				5D0FBA461C01B3EB005BB336 /* Frameworks */,
+				0B0AF7F121740C3B0042DA27 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -2303,7 +2287,7 @@
 		8838C55D1BC514B500587F8E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
@@ -2366,7 +2350,7 @@
 		8838C55E1BC514B500587F8E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";

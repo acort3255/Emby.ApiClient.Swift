@@ -6,8 +6,9 @@
 import Foundation
 
 public struct SimilarItemsQuery {
-    var userId: String?
-    var id: String?
-    var limit: Int?
-    var fields: [ItemFields]?
+    public init() {}
+    public var userId: String?
+    public var id: String?
+    public var limit: Int?
+    public var fields: [ItemFields]?
 }

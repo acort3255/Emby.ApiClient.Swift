@@ -6,6 +6,7 @@
 import Foundation
 
 public struct UserQuery {
-    let hidden: Bool
-    let disabled: Bool
+    public init() {}
+    public let hidden: Bool
+    public let disabled: Bool
 }

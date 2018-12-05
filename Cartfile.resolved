@@ -1,2 +1,2 @@
-github "Alamofire/Alamofire" "4.7.0"
-github "robbiehanson/CocoaAsyncSocket" "26befdc3041bee72d9249e9f3e9e0ef03fee569c"
+github "Alamofire/Alamofire" "4.7.3"
+github "robbiehanson/CocoaAsyncSocket" "f33ea53c298fcad69d55f387ead174e30c2446cf"

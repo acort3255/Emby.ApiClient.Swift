@@ -6,13 +6,14 @@
 import Foundation
 
 public struct UpcomingEpisodesQuery {
-    var userId: String?
-    var parentId: String?
-    var startIndex: Int?
-    var limit: Int?
-    var fields: [ItemFields]?
-    var enableImages: Bool?
-    var imageTypeLimit: Int?
-    var enableImageTypes: [ImageType]?
+    public init() {}
+    public var userId: String?
+    public var parentId: String?
+    public var startIndex: Int?
+    public var limit: Int?
+    public var fields: [ItemFields]?
+    public var enableImages: Bool?
+    public var imageTypeLimit: Int?
+    public var enableImageTypes: [ImageType]?
 }
 

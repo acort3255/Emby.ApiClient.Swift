@@ -6,6 +6,7 @@
 import Foundation
 
 public struct ItemCountsQuery {
-    let userId: String
-    let favorite: Bool
+    public init() {}
+    public let userId: String
+    public let favorite: Bool
 }

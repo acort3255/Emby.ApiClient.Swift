@@ -6,5 +6,6 @@
 import Foundation
 
 public struct SessionQuery {
-    let controllableByUserId: String
+    public init() {}
+    public let controllableByUserId: String
 }

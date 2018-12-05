@@ -7,5 +7,5 @@
 import Foundation
 
 public class PersonsQuery: ItemsByNameQuery {
-    var personTypes: [String]?
+    public var personTypes: [String]?
 }

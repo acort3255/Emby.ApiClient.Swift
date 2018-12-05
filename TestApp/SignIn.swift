@@ -29,9 +29,8 @@ class SignIn: UITableViewController {
     
     @IBAction func signInButtonTapped(sender: UIBarButtonItem) {
         apiClient.authenticateUserAsync(username: usernameField.text!, password: passwordField.text ?? "", success: { (result) -> Void in
-            print("Access token: \(self.apiClient.getAccessToken())")
             self.apiClient.setAuthenticationInfo(accessToken: result.accessToken)
-            print("Access token: \(self.apiClient.getAccessToken())")
+            
             let alert = UIAlertController(title: "Authentication Successful", message: "Access Token: \(result.accessToken)", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
@@ -46,15 +45,25 @@ class SignIn: UITableViewController {
             itemQuery.enableTotalRecordCount = false;
             itemQuery.limit = 10
             itemQuery.recursive = true
-            _ = self.apiClient.getItemsAsync(query: itemQuery, success: { (itemResults) in
-                for item in itemResults
-                {
-                    print("Item results: \(item.name)")
-                    let url = self.apiClient.getImageUrl(item: item, options: ImageOptions())
-                    print(url)
+//            _ = self.apiClient.getItemsAsync(query: itemQuery, success: { (itemResults) in
+//                for item in itemResults
+//                {
+//                    print("Item results: \(item.name)")
+//                    let url = self.apiClient.getImageUrl(item: item, options: ImageOptions())
+//                    print(url)
+//                }
+//            }, failure: { (error) in
+//                print("Failed to get items: \(error)")
+//            })
+            
+            let test = NextUpQuery()
+            
+            _ = self.apiClient.getGenresAsync(query: ItemsByNameQuery(), success: { (items) in
+                for item in items {
+                    print(item.name)
                 }
             }, failure: { (error) in
-                print("Failed to get items: \(error)")
+                print("Failed to get Genres")
             })
             
             

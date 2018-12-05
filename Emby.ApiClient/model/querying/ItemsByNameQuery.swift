@@ -6,24 +6,25 @@
 import Foundation
 
 public class ItemsByNameQuery {
-    var userId: String?
-    var startIndex: Int?
-    var limit: Int?
-    var recursive: Bool? = true
-    var sortOrder: SortOrder?
-    var parentId: String?
-    var fields: [ItemFields]?
-    var filters: [ItemFilter]?
-    var excludeItemTypes: [String]?
-    var includeItemTypes: [String]?
-    var mediaTypes: [String]?
-    var sortBy: [String]?
-    var imageTypes: [ImageType]?
-    var nameStartsWithOrGreater: String?
-    var nameStartsWith: String?
-    var nameLessThan: String?
-    var isPlayed: Bool?
-    var enableImages: Bool?
-    var imageTypeLimit: Int?
-    var enableImageTypes: [ImageType]?
+    public init() {}
+    public var userId: String?
+    public var startIndex: Int?
+    public var limit: Int?
+    public var recursive: Bool? = true
+    public var sortOrder: SortOrder?
+    public var parentId: String?
+    public var fields: [ItemFields]?
+    public var filters: [ItemFilter]?
+    public var excludeItemTypes: [String]?
+    public var includeItemTypes: [String]?
+    public var mediaTypes: [String]?
+    public var sortBy: [String]?
+    public var imageTypes: [ImageType]?
+    public var nameStartsWithOrGreater: String?
+    public var nameStartsWith: String?
+    public var nameLessThan: String?
+    public var isPlayed: Bool?
+    public var enableImages: Bool?
+    public var imageTypeLimit: Int?
+    public var enableImageTypes: [ImageType]?
 }

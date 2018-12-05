@@ -14,8 +14,8 @@ public struct QueryResult<T: Codable>: Codable{
     }
     
 //    public init() {}
-    var items: [T]?
-    var totalRecordCount: Int
+    public var items: [T]?
+    public var totalRecordCount: Int
     
     enum CodingKeys: String, CodingKey
     {

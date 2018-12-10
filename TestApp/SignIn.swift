@@ -56,11 +56,9 @@ class SignIn: UITableViewController {
 //                print("Failed to get items: \(error)")
 //            })
             
-            let test = NextUpQuery()
-            
             _ = self.apiClient.getGenresAsync(query: ItemsByNameQuery(), success: { (items) in
                 for item in items {
-                    print(item.name)
+                    print("Genre Name: \(item.name) Id: \(item.id)")
                 }
             }, failure: { (error) in
                 print("Failed to get Genres")

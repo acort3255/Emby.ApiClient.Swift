@@ -6,12 +6,12 @@
 import Foundation
 
 public class BaseItemPerson: Codable {
-    let name: String
-    var id: String?
-    let role: String?
-    let type: String
-    var primaryImageTag: String?
-    var hasPrimaryImage: Bool {
+    public let name: String
+    public var id: String?
+    public let role: String?
+    public let type: String
+    public var primaryImageTag: String?
+    public var hasPrimaryImage: Bool {
         get {
             return primaryImageTag != nil
         }

@@ -386,7 +386,7 @@ public class BaseItemDto : Codable {
         case runTimeTicks = "RunTimeTicks"
         case officialRating = "OfficialRating"
         case communityRating = "CommunityRating"
-        case tagLines = "TagLines"
+        case tagLines = "Taglines"
         case overview = "Overview"
         case people = "People"
 

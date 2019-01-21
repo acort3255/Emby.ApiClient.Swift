@@ -45,24 +45,24 @@ class SignIn: UITableViewController {
             itemQuery.enableTotalRecordCount = false;
             itemQuery.limit = 10
             itemQuery.recursive = true
-//            _ = self.apiClient.getItemsAsync(query: itemQuery, success: { (itemResults) in
-//                for item in itemResults
-//                {
-//                    print("Item results: \(item.name)")
-//                    let url = self.apiClient.getImageUrl(item: item, options: ImageOptions())
-//                    print(url)
-//                }
-//            }, failure: { (error) in
-//                print("Failed to get items: \(error)")
-//            })
-            
-            _ = self.apiClient.getGenresAsync(query: ItemsByNameQuery(), success: { (items) in
-                for item in items {
-                    print("Genre Name: \(item.name) Id: \(item.id)")
+            _ = self.apiClient.getItemsAsync(query: itemQuery, success: { (itemResults) in
+                for item in itemResults
+                {
+                    print("Item results: \(item.name)")
+                    let url = self.apiClient.getImageUrl(item: item, options: ImageOptions())
+                    print(url)
                 }
             }, failure: { (error) in
-                print("Failed to get Genres")
+                print("Failed to get items: \(error)")
             })
+            
+//            _ = self.apiClient.getGenresAsync(query: ItemsByNameQuery(), success: { (items) in
+//                for item in items {
+//                    print("Genre Name: \(item.name) Id: \(item.id)")
+//                }
+//            }, failure: { (error) in
+//                print("Failed to get Genres")
+//            })
             
             
             }, failure: { (error) -> Void in

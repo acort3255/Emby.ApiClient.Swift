@@ -173,7 +173,7 @@ public class tvOSDevice: DeviceProtocol {
         //            return manufacturer + " " + model;
         //        }
         
-        return UIDevice.current.systemName + UIDevice.current.model
+        return UIDevice.current.systemName + " " + UIDevice.current.model
     }
     
     //    private Observable resumeFromSleepObservable = new AutomaticObservable();

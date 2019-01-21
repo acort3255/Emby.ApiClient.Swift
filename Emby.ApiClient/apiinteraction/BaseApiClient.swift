@@ -195,7 +195,7 @@ public class BaseApiClient// implements IDisposable
         if let clientName = getClientName(),
             let deviceId = getDeviceId(),
             let deviceName = getDeviceName() {
-                var header = "Client=\"\(clientName)\", DeviceId=\"\(deviceId)\", Device=\"\(deviceName)\", Version=\"\(getApplicationVersion())\""
+                var header = "Client=\"\(clientName)\", DeviceId=\"\(deviceId)\", Device=\"\(deviceName)\", Version=\"\(getApplicationVersion() ?? "1.0")\""
                 
                 if let currentUserId = getCurrentUserId() {
                     header += ", UserId=\"\(currentUserId)\""

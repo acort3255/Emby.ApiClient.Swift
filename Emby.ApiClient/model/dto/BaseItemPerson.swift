@@ -8,7 +8,7 @@ import Foundation
 public class BaseItemPerson: Codable {
     let name: String
     var id: String?
-    let role: String
+    let role: String?
     let type: String
     var primaryImageTag: String?
     var hasPrimaryImage: Bool {

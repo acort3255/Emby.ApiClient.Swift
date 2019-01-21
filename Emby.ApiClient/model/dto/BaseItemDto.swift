@@ -382,6 +382,13 @@ public class BaseItemDto : Codable {
         case name = "Name"
         case serverId = "ServerId"
         case id = "Id"
+        case productionYear = "ProductionYear"
+        case runTimeTicks = "RunTimeTicks"
+        case officialRating = "OfficialRating"
+        case communityRating = "CommunityRating"
+        case tagLines = "TagLines"
+        case overview = "Overview"
+        case people = "People"
 
     }
 }

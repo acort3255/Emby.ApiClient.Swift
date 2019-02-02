@@ -432,7 +432,7 @@ public class BaseApiClient// implements IDisposable
         case .Chapter:
             return item.chapters?[options.imageIndex ?? 0].imageTag
         default:
-            return item.imageTags?[options.imageType]
+            return item.imageTags?[options.imageType.rawValue]
         }
     }
 
@@ -534,7 +534,7 @@ public class BaseApiClient// implements IDisposable
         newOptions.imageType = ImageType.Logo
         
         let logoItemId = item.hasLogo ? item.id : item.parentLogoItemId
-        let imageTag = item.hasLogo ? item.imageTags?[ImageType.Logo] : item.parentLogoImageTag
+        let imageTag = item.hasLogo ? item.imageTags?[ImageType.Logo.rawValue] : item.parentLogoImageTag
         
         if let lItemId = logoItemId {
             newOptions.tag = imageTag
@@ -550,7 +550,7 @@ public class BaseApiClient// implements IDisposable
         newOptions.imageType = ImageType.Logo
         
         let thumbItemId = item.hasThumb ? item.id : item.seriesThumbImageTag != nil ? item.seriesId : item.parentThumbItemId
-        let imageTag = item.hasThumb ? item.imageTags?[ImageType.Thumb] : item.seriesThumbImageTag != nil ? item.seriesThumbImageTag : item.parentThumbImageTag
+        let imageTag = item.hasThumb ? item.imageTags?[ImageType.Thumb.rawValue] : item.seriesThumbImageTag != nil ? item.seriesThumbImageTag : item.parentThumbImageTag
         
         if let tItemId = thumbItemId {
             newOptions.tag = imageTag
@@ -566,7 +566,7 @@ public class BaseApiClient// implements IDisposable
         newOptions.imageType = ImageType.Logo
         
         let artItemId = item.hasArtImage ? item.id : item.parentArtItemId
-        let imageTag = item.hasArtImage ? item.imageTags?[ImageType.Art] : item.parentArtImageTag
+        let imageTag = item.hasArtImage ? item.imageTags?[ImageType.Art.rawValue] : item.parentArtImageTag
         
         if let aItemId = artItemId {
             newOptions.tag = imageTag

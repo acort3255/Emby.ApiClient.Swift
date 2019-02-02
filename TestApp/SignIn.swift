@@ -41,10 +41,11 @@ class SignIn: UITableViewController {
             itemQuery.sortOrder = SortOrder.Descending
             
 //             Get media only, don't return folder items
-            itemQuery.filters = [ItemFilter.IsNotFolder]
+//            itemQuery.filters = [ItemFilter.IsNotFolder]
             itemQuery.enableTotalRecordCount = false;
-            itemQuery.limit = 10
+            itemQuery.limit = 2
             itemQuery.recursive = true
+            itemQuery.includeItemTypes = ["Series"]
             _ = self.apiClient.getItemsAsync(query: itemQuery, success: { (itemResults) in
                 for item in itemResults
                 {

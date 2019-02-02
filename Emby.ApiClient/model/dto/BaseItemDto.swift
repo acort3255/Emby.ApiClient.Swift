@@ -155,7 +155,11 @@ public class BaseItemDto : Codable {
         return self.type == type
     }
     
-    public var imageTags: [ImageType: String]?
+    /* TODO: The problem is that Dictionary's Codable conformance can currently only properly handle String and Int keys. For a dictionary with any other Key type (where that Key is Encodable/Decodable), it is encoded and decoded with an unkeyed container (JSON array) with alternating key values. For now just use a string dictionary
+     Source: https://stackoverflow.com/questions/44725202/swift-4-decodable-dictionary-with-enum-as-key?rq=1
+     */
+//    public var imageTags: [ImageType: String]?
+    public var imageTags: [String: String]?
     public var backdropImageTags: [String]?
     public var screenshotImageTags: [String]?
     public var parentLogoImageTag: String?
@@ -235,55 +239,55 @@ public class BaseItemDto : Codable {
     
     public var hasBanner: Bool {
         get {
-            return (imageTags != nil) ? imageTags![ImageType.Banner] != nil : false
+            return (imageTags != nil) ? imageTags![ImageType.Banner.rawValue] != nil : false
         }
     }
     
     public var hasArtImage: Bool {
         get {
-            return (imageTags != nil) ? imageTags![ImageType.Art] != nil : false
+            return (imageTags != nil) ? imageTags![ImageType.Art.rawValue] != nil : false
         }
     }
     
     public var hasLogo: Bool {
         get {
-            return (imageTags != nil) ? imageTags![ImageType.Logo] != nil : false
+            return (imageTags != nil) ? imageTags![ImageType.Logo.rawValue] != nil : false
         }
     }
     
     public var hasThumb: Bool {
         get {
-            return (imageTags != nil) ? imageTags![ImageType.Thumb] != nil : false
+            return (imageTags != nil) ? imageTags![ImageType.Thumb.rawValue] != nil : false
         }
     }
     
     public var hasPrimaryImage: Bool {
         get {
-            return (imageTags != nil) ? imageTags![ImageType.Primary] != nil : false
+            return (imageTags != nil) ? imageTags![ImageType.Primary.rawValue] != nil : false
         }
     }
     
     public var hasDiscImage: Bool {
         get {
-            return (imageTags != nil) ? imageTags![ImageType.Disc] != nil : false
+            return (imageTags != nil) ? imageTags![ImageType.Disc.rawValue] != nil : false
         }
     }
     
     public var hasBoxImage: Bool {
         get {
-            return (imageTags != nil) ? imageTags![ImageType.Box] != nil : false
+            return (imageTags != nil) ? imageTags![ImageType.Box.rawValue] != nil : false
         }
     }
     
     public var hasBoxRearImage: Bool {
         get {
-            return (imageTags != nil) ? imageTags![ImageType.BoxRear] != nil : false
+            return (imageTags != nil) ? imageTags![ImageType.BoxRear.rawValue] != nil : false
         }
     }
     
     public var hasMenuImage: Bool {
         get {
-            return (imageTags != nil) ? imageTags![ImageType.Menu] != nil : false
+            return (imageTags != nil) ? imageTags![ImageType.Menu.rawValue] != nil : false
         }
     }
     
@@ -386,9 +390,11 @@ public class BaseItemDto : Codable {
         case runTimeTicks = "RunTimeTicks"
         case officialRating = "OfficialRating"
         case communityRating = "CommunityRating"
+        case criticRating = "CriticRating"
         case tagLines = "Taglines"
         case overview = "Overview"
         case people = "People"
+        case imageTags = "ImageTags"
 
     }
 }

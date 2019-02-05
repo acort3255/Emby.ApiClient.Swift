@@ -395,6 +395,9 @@ public class BaseItemDto : Codable {
         case overview = "Overview"
         case people = "People"
         case imageTags = "ImageTags"
+        case seriesName = "SeriesName"
+        case seriesId = "SeriesId"
+        case seasonId = "SeasonId"
 
     }
 }

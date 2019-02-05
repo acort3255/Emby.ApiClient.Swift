@@ -453,9 +453,13 @@ public class ApiClient: BaseApiClient {
         dict.addIfNotNil("IsMissing", value: query.isMissing)
         dict.addIfNotNil("IsVirtualUnaired", value: query.isVirtualUnaired)
         
-        let url = getApiUrl(handler: "Shows/\(String(describing: query.seriesId))/Episodes", queryString: dict)
-        
-        getItemsFromUrl(url: url, success: success, failure: failure)
+        if let seriesId = query.seriesId {
+            let url = getApiUrl(handler: "Shows/\(seriesId))/Episodes", queryString: dict)
+            
+            getItemsFromUrl(url: url, success: success, failure: failure)
+        } else {
+            print("\(NSStringFromClass(ApiClient.self)): Error: nil series id")
+        }
     }
     
     public func getSeasonsAsync(query: SeasonQuery, success: @escaping ([BaseItemDto]) -> Void, failure: @escaping (EmbyError) -> Void) {
@@ -467,9 +471,13 @@ public class ApiClient: BaseApiClient {
         dict.addIfNotNil("IsVirtualUnaired", value: query.isVirtualUnaired)
         dict.addIfNotNil("IsSpecialSeason", value: query.isSpecialSeason)
         
-        let url = getApiUrl(handler: "Shows/\(String(describing: query.seriesId))/Seasons", queryString: dict)
-        
-        getItemsFromUrl(url: url, success: success, failure: failure)
+        if let seriesId = query.seriesId {
+            let url = getApiUrl(handler: "Shows/\(seriesId)/Seasons", queryString: dict)
+            
+            getItemsFromUrl(url: url, success: success, failure: failure)
+        } else {
+            print("\(NSStringFromClass(ApiClient.self)): Error: nil series id")
+        }
     }
 
     /**

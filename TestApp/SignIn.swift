@@ -34,19 +34,23 @@ class SignIn: UITableViewController {
             let alert = UIAlertController(title: "Authentication Successful", message: "Access Token: \(result.accessToken)", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: nil))
             self.present(alert, animated: true, completion: nil)
-            var itemQuery = ItemQuery()
-            itemQuery.userId = result.user.id
-//            itemQuery.sortBy = [SortOrder.Descending.rawValue]
-            itemQuery.sortBy = ["DateCreated"]
-            itemQuery.sortOrder = SortOrder.Descending
-            
-//             Get media only, don't return folder items
-//            itemQuery.filters = [ItemFilter.IsNotFolder]
-            itemQuery.enableTotalRecordCount = false;
-            itemQuery.limit = 2
-            itemQuery.recursive = true
-            itemQuery.includeItemTypes = ["Series"]
-            _ = self.apiClient.getItemsAsync(query: itemQuery, success: { (itemResults) in
+//            var itemQuery = ItemQuery()
+//            itemQuery.userId = result.user.id
+////            itemQuery.sortBy = [SortOrder.Descending.rawValue]
+//            itemQuery.sortBy = ["DateCreated"]
+//            itemQuery.sortOrder = SortOrder.Descending
+//
+////             Get media only, don't return folder items
+////            itemQuery.filters = [ItemFilter.IsNotFolder]
+//            itemQuery.enableTotalRecordCount = false;
+//            itemQuery.limit = 2
+//            itemQuery.recursive = true
+//            itemQuery.includeItemTypes = ["Series"]
+            var seasonE = EpisodeQuery()
+            seasonE.seriesId = "63c2c38378a14fc7fe108e1857d89009"
+            seasonE.seasonId = "74575279c8028cbfadd6fc801d16b1f3"
+            seasonE.userId = result.user.id
+            _ = self.apiClient.getEpisodesAsync(query: seasonE, success: { (itemResults) in
                 for item in itemResults
                 {
                     print("Item results: \(item.name)")

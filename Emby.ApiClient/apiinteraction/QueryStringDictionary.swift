@@ -18,7 +18,7 @@ Class QueryStringDictionary
 */
 public class QueryStringDictionary //extends java.util.HashMap<String, String>
 {
-    var data: [String: String] = [:]
+    var data = [String: String]()
     
 //    /**
 //    Initializes a new instance of the <see cref="QueryStringDictionary" /> class.

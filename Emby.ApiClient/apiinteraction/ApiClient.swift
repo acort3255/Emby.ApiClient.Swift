@@ -455,7 +455,6 @@ public class ApiClient: BaseApiClient {
         
         if let seriesId = query.seriesId {
             let url = getApiUrl(handler: "Shows/\(seriesId))/Episodes", queryString: dict)
-            
             getItemsFromUrl(url: url, success: success, failure: failure)
         } else {
             print("\(NSStringFromClass(ApiClient.self)): Error: nil series id")

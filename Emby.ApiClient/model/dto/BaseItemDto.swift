@@ -399,5 +399,7 @@ public class BaseItemDto : Codable {
         case seriesId = "SeriesId"
         case seasonId = "SeasonId"
         case indexNumber = "IndexNumber"
+        case genres = "Genres"
+        case seriesGenres = "SeriesGenres"
     }
 }

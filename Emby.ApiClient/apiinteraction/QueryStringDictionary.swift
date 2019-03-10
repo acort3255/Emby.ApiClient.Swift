@@ -78,7 +78,6 @@ public class QueryStringDictionary //extends java.util.HashMap<String, String>
     }
     
     public final func addIfNotNilOrEmpty(_ name: String, value: String?) {
-        print("Primary Tag: \(value)")
         if let val: String = value, !val.isEmpty {
             addIfNotNil(name, value: value)
         }
@@ -151,7 +150,6 @@ public class QueryStringDictionary //extends java.util.HashMap<String, String>
     public final func addIfNotNil(_ name: String, value: Bool?) {
         if let val = value {
             data[name] = String(val)
-            print("addIfNotNil Test: \(data[name])")
         }
     }
 //    

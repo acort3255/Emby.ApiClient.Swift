@@ -46,10 +46,10 @@ class SignIn: UITableViewController {
             itemQuery.limit = 2
             itemQuery.recursive = true
             itemQuery.includeItemTypes = ["Series"]
-            var seasonE = EpisodeQuery()
-            seasonE.seriesId = "63c2c38378a14fc7fe108e1857d89009"
-            seasonE.seasonId = "74575279c8028cbfadd6fc801d16b1f3"
-            seasonE.userId = result.user.id
+//            var seasonE = EpisodeQuery()
+//            seasonE.seriesId = "63c2c38378a14fc7fe108e1857d89009"
+//            seasonE.seasonId = "74575279c8028cbfadd6fc801d16b1f3"
+//            seasonE.userId = result.user.id
             _ = self.apiClient.getItemsAsync(query: itemQuery, success: { (itemResults) in
                 for item in itemResults
                 {

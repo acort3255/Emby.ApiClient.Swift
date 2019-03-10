@@ -81,7 +81,7 @@ public class HttpClient : IAsyncHttpClient {
                 return .success
             }
             .responseJSON { response in
-                print(response.result.error?.localizedDescription)
+//                print(response.result.error?.localizedDescription)
 //                if case .success(_) = response.result {
 //                    print(response.result.value as? JSON_Object)
 //                    if let jsonArray = response.result.value as? JSON_Array {

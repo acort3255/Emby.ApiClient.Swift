@@ -42,16 +42,17 @@ class SignIn: UITableViewController {
 
 //             Get media only, don't return folder items
 //            itemQuery.filters = [ItemFilter.IsNotFolder]
-            itemQuery.enableTotalRecordCount = false;
-            itemQuery.limit = 2
+            itemQuery.enableTotalRecordCount = true;
+            itemQuery.limit = 20
+            itemQuery.startIndex = 0
             itemQuery.recursive = true
             itemQuery.includeItemTypes = ["Series"]
 //            var seasonE = EpisodeQuery()
 //            seasonE.seriesId = "63c2c38378a14fc7fe108e1857d89009"
 //            seasonE.seasonId = "74575279c8028cbfadd6fc801d16b1f3"
 //            seasonE.userId = result.user.id
-            _ = self.apiClient.getItemsAsync(query: itemQuery, success: { (itemResults) in
-                for item in itemResults
+            _ = self.apiClient.getItemsAsync(query: itemQuery, success: { (results) in
+                for item in results.items ?? []
                 {
                     print("Item results: \(item.name)")
                     let url = self.apiClient.getImageUrl(item: item, options: ImageOptions())

@@ -134,11 +134,11 @@ public class ApiClient: BaseApiClient {
      Retrieves an array of items for a user
      
      - Parameter query: The ItemQuery
-     - Parameter success: Success callback with an array of BaseItemDto
+     - Parameter success: Success callback with an QueryResult that contains array of BaseItemDto and TotalRecordCount
      - Parameter failure: Failure callback with an EmbyError
      
      */
-    public func getItemsAsync(query: ItemQuery, success: @escaping ([BaseItemDto]) -> Void, failure: @escaping (EmbyError) -> Void) {
+    public func getItemsAsync(query: ItemQuery, success: @escaping (QueryResult<BaseItemDto>) -> Void, failure: @escaping (EmbyError) -> Void) {
         //print(query)
         let url = getItemListUrl(query: query)
         print("URL: \(url)")
@@ -388,12 +388,12 @@ public class ApiClient: BaseApiClient {
         sendRequest(request: request, success: success, failure: failure)
     }
     
-    private func getItemsFromUrl<Value: Codable>(url: String, success: @escaping ([Value]) -> Void, failure: @escaping (EmbyError) -> Void) {
+    private func getItemsFromUrl<Value: Codable>(url: String, success: @escaping (Value) -> Void, failure: @escaping (EmbyError) -> Void) {
         let urlWithFormat = addDataFormat(url: url)
         
         let request = HttpRequest(url: urlWithFormat, method: .get)
         
-        sendCollectionRequest(request: request, success: success, failure: failure)
+        sendRequest(request: request, success: success, failure: failure)
     }
     
     /**

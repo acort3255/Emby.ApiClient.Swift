@@ -461,7 +461,7 @@ public class ApiClient: BaseApiClient {
         }
     }
     
-    public func getSeasonsAsync(query: SeasonQuery, success: @escaping ([BaseItemDto]) -> Void, failure: @escaping (EmbyError) -> Void) {
+    public func getSeasonsAsync(query: SeasonQuery, success: @escaping (QueryResult<BaseItemDto>) -> Void, failure: @escaping (EmbyError) -> Void) {
         let dict = QueryStringDictionary()
         
         dict.addIfNotNilOrEmpty("UserId", value: query.userId)
@@ -503,7 +503,7 @@ public class ApiClient: BaseApiClient {
      - Parameter failure: Failure callback with an EmbyError
      
      */
-    public func getGenresAsync(query: ItemsByNameQuery, success: @escaping ([BaseItemDto]) -> Void, failure: @escaping (EmbyError) -> Void) {
+    public func getGenresAsync(query: ItemsByNameQuery, success: @escaping (QueryResult<BaseItemDto>) -> Void, failure: @escaping (EmbyError) -> Void) {
         let url = getItemByNameListUrl(query: query, type: "Genres")
         
         getItemsFromUrl(url: url, success: success, failure: failure)

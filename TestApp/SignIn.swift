@@ -51,24 +51,24 @@ class SignIn: UITableViewController {
 //            seasonE.seriesId = "63c2c38378a14fc7fe108e1857d89009"
 //            seasonE.seasonId = "74575279c8028cbfadd6fc801d16b1f3"
 //            seasonE.userId = result.user.id
-            _ = self.apiClient.getItemsAsync(query: itemQuery, success: { (results) in
-                for item in results.items ?? []
-                {
-                    print("Item results: \(item.name)")
-                    let url = self.apiClient.getImageUrl(item: item, options: ImageOptions())
-                    print(url)
-                }
-            }, failure: { (error) in
-                print("Failed to get items: \(error)")
-            })
-            
-//            _ = self.apiClient.getGenresAsync(query: ItemsByNameQuery(), success: { (items) in
-//                for item in items {
-//                    print("Genre Name: \(item.name) Id: \(item.id)")
+//            _ = self.apiClient.getItemsAsync(query: itemQuery, success: { (results) in
+//                for item in results.items ?? []
+//                {
+//                    print("Item results: \(item.name)")
+//                    let url = self.apiClient.getImageUrl(item: item, options: ImageOptions())
+//                    print(url)
 //                }
 //            }, failure: { (error) in
-//                print("Failed to get Genres")
+//                print("Failed to get items: \(error)")
 //            })
+            
+            _ = self.apiClient.getGenresAsync(query: ItemsByNameQuery(), success: { (items) in
+                for item in items.items ?? [] {
+                    print("Genre Name: \(item.name) Id: \(item.id)")
+                }
+            }, failure: { (error) in
+                print("Failed to get Genres: \(error.localizedDescription)")
+            })
             
             
             }, failure: { (error) -> Void in

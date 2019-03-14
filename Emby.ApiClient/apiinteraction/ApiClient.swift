@@ -2265,6 +2265,17 @@ public class ApiClient: BaseApiClient {
 //        
 //        Send(url, "GET", new SerializedResponse<QueryFilters>(response, jsonSerializer, QueryFilters.class));
 //    }
+    public func getFilters(query: FilterQuery, success: @escaping (FilterItem) -> Void, failure: @escaping (EmbyError) -> Void) {
+        let dict = QueryStringDictionary()
+        
+        dict.addIfNotNil("UserId", value: query.userId)
+        dict.addIfNotNil("ParentId", value: query.parentId)
+        dict.add("IncludeItemTypes", value: query.includeItemTypes)
+
+        let urlString = getApiUrl(handler: "Items/Filters", queryString: dict)
+
+        getItemFromUrl(url: urlString, success: success, failure: failure)
+    }
 //    
 //    public void GetPlaybackInfo(PlaybackInfoRequest request, final Response<PlaybackInfoResponse> response)
 //    {

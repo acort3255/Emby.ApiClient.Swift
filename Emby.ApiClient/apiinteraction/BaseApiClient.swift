@@ -140,7 +140,7 @@ public class BaseApiClient// implements IDisposable
     }
     
     public final func getApiUrl() -> String {
-        return getServerAddress() + "/mediabrowser"
+        return getServerAddress() + "/emby"
     }
     
     internal final func getAuthorizationScheme() -> String {

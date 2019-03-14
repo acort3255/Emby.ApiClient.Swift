@@ -62,12 +62,24 @@ class SignIn: UITableViewController {
 //                print("Failed to get items: \(error)")
 //            })
             
-            _ = self.apiClient.getGenresAsync(query: ItemsByNameQuery(), success: { (items) in
-                for item in items.items ?? [] {
-                    print("Genre Name: \(item.name) Id: \(item.id)")
+//            _ = self.apiClient.getGenresAsync(query: ItemsByNameQuery(), success: { (items) in
+//                for item in items.items ?? [] {
+//                    print("Genre Name: \(item.name) Id: \(item.id)")
+//                }
+//            }, failure: { (error) in
+//                print("Failed to get Genres: \(error.localizedDescription)")
+//            })
+            let filtersQuery = FilterQuery()
+            filtersQuery.userId = result.user.id
+//            filtersQuery.parentId = "f137a2dd21bbc1b99aa5c0f6bf02a805"
+            filtersQuery.includeItemTypes = ["Series"]
+            
+            _ = self.apiClient.getFilters(query: filtersQuery, success: { (results) in
+                for item in results.genres ?? [] {
+                    print(item)
                 }
             }, failure: { (error) in
-                print("Failed to get Genres: \(error.localizedDescription)")
+                print("Failed to get Filters: \(error.localizedDescription)")
             })
             
             

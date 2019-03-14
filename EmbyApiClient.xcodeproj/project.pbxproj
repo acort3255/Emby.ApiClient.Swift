@@ -356,6 +356,12 @@
 		0B0AF7F321740C3C0042DA27 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0B0AF7F221740C3C0042DA27 /* Alamofire.framework */; };
 		0B13F2972071689E00F5F9A0 /* tvOSDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE553F420715DF0006A4DAA /* tvOSDevice.swift */; };
 		0B13F2A020716BFF00F5F9A0 /* tvOSDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BE553F420715DF0006A4DAA /* tvOSDevice.swift */; };
+		0B2B8FD82239D809004BCDE3 /* FilterQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2B8FD62239D66A004BCDE3 /* FilterQuery.swift */; };
+		0B2B8FD92239D809004BCDE3 /* FilterQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2B8FD62239D66A004BCDE3 /* FilterQuery.swift */; };
+		0B2B8FDA2239D80A004BCDE3 /* FilterQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2B8FD62239D66A004BCDE3 /* FilterQuery.swift */; };
+		0B2B8FDD2239D9F8004BCDE3 /* FilterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2B8FDB2239D9F3004BCDE3 /* FilterItem.swift */; };
+		0B2B8FDE2239D9F8004BCDE3 /* FilterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2B8FDB2239D9F3004BCDE3 /* FilterItem.swift */; };
+		0B2B8FDF2239D9F9004BCDE3 /* FilterItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2B8FDB2239D9F3004BCDE3 /* FilterItem.swift */; };
 		0B35308820758A61009923A1 /* QueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3530862075863B009923A1 /* QueryResult.swift */; };
 		0B35308920758A61009923A1 /* QueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3530862075863B009923A1 /* QueryResult.swift */; };
 		0B35308A20758A62009923A1 /* QueryResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B3530862075863B009923A1 /* QueryResult.swift */; };
@@ -716,6 +722,8 @@
 		0A40C82C1C26879E0020A7A2 /* Startup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Startup.swift; sourceTree = "<group>"; };
 		0A40C82D1C26879E0020A7A2 /* UserSelection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSelection.swift; sourceTree = "<group>"; };
 		0B0AF7F221740C3C0042DA27 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/tvOS/Alamofire.framework; sourceTree = "<group>"; };
+		0B2B8FD62239D66A004BCDE3 /* FilterQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterQuery.swift; sourceTree = "<group>"; };
+		0B2B8FDB2239D9F3004BCDE3 /* FilterItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterItem.swift; sourceTree = "<group>"; };
 		0B3530862075863B009923A1 /* QueryResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueryResult.swift; sourceTree = "<group>"; };
 		0BE553F420715DF0006A4DAA /* tvOSDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tvOSDevice.swift; sourceTree = "<group>"; };
 		5D0FBAC41C01B4EB005BB336 /* EmbyApiClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EmbyApiClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -1053,6 +1061,8 @@
 				730C99561C374F1A00FE32DF /* SeasonQuery.swift */,
 				7352DE451C3CA8A50004BB0B /* PersonsQuery.swift */,
 				0B3530862075863B009923A1 /* QueryResult.swift */,
+				0B2B8FD62239D66A004BCDE3 /* FilterQuery.swift */,
+				0B2B8FDB2239D9F3004BCDE3 /* FilterItem.swift */,
 			);
 			name = querying;
 			sourceTree = "<group>";
@@ -1619,6 +1629,7 @@
 				040932631C265F6700736C7B /* TranscodingInfo.swift in Sources */,
 				04C23BFC1C0C0BB1006722ED /* SubtitleProfileTests.swift in Sources */,
 				048EADE61C3433B400BE521F /* SubtitleDownloadOptions.swift in Sources */,
+				0B2B8FDA2239D80A004BCDE3 /* FilterQuery.swift in Sources */,
 				048EADEA1C3433B400BE521F /* NameIdPair.swift in Sources */,
 				048E0CBF1C095E380001081F /* BaseItemPersonTests.swift in Sources */,
 				048EADD51C34339900BE521F /* MetadataFields.swift in Sources */,
@@ -1709,6 +1720,7 @@
 				048EAD9E1C3431C900BE521F /* UserItemDataDto.swift in Sources */,
 				048EADD81C34339900BE521F /* MediaStreamType.swift in Sources */,
 				0409322F1C26572200736C7B /* PlayRequest.swift in Sources */,
+				0B2B8FDF2239D9F9004BCDE3 /* FilterItem.swift in Sources */,
 				048EADD11C34339900BE521F /* Video3DFormat.swift in Sources */,
 				048EADDB1C34339F00BE521F /* ItemFields.swift in Sources */,
 				048EADAC1C34333800BE521F /* CredentialProvider.swift in Sources */,
@@ -1799,6 +1811,7 @@
 				5D0FBA4B1C01B4EB005BB336 /* FileUploadProgress.swift in Sources */,
 				5D0FBA4C1C01B4EB005BB336 /* SystemInfo.swift in Sources */,
 				040932781C28FEB500736C7B /* UserQuery.swift in Sources */,
+				0B2B8FD92239D809004BCDE3 /* FilterQuery.swift in Sources */,
 				04C23C121C168056006722ED /* EncodingContext.swift in Sources */,
 				7352DE481C3CA8A50004BB0B /* PersonsQuery.swift in Sources */,
 				5D0FBA4D1C01B4EB005BB336 /* WakeOnLanInfo.swift in Sources */,
@@ -1876,6 +1889,7 @@
 				5D0FBA811C01B4EB005BB336 /* MediaStream.swift in Sources */,
 				0A40C8281C2687480020A7A2 /* AuthenticationResult.swift in Sources */,
 				5D0FBA821C01B4EB005BB336 /* MediaSourceInfo.swift in Sources */,
+				0B2B8FDE2239D9F8004BCDE3 /* FilterItem.swift in Sources */,
 				0B13F2972071689E00F5F9A0 /* tvOSDevice.swift in Sources */,
 				5D0FBA831C01B4EB005BB336 /* ApiClient.swift in Sources */,
 				5D0FBA841C01B4EB005BB336 /* ImageOptions.swift in Sources */,
@@ -1981,6 +1995,7 @@
 				04B8AB4D1BF037ED00ED19CA /* NextUpQuery.swift in Sources */,
 				04C23C171C168133006722ED /* ProfileConditionType.swift in Sources */,
 				04B8AB7D1BF2F24700ED19CA /* StudioDto.swift in Sources */,
+				0B2B8FDD2239D9F8004BCDE3 /* FilterItem.swift in Sources */,
 				04C23BF01C096AD5006722ED /* HttpHeaderInfo.swift in Sources */,
 				04AFCAE61BD3453400C95C88 /* ClientCapabilities.swift in Sources */,
 				04B8AB751BF2EC1F00ED19CA /* MetadataFields.swift in Sources */,
@@ -2065,6 +2080,7 @@
 				04C23BF21C096B18006722ED /* XmlAttribute.swift in Sources */,
 				88CF7E781BC6E86F00A33B72 /* ConnectUserServer.swift in Sources */,
 				889288CB1BE7FF0000DAD65F /* CredentialProvider.swift in Sources */,
+				0B2B8FD82239D809004BCDE3 /* FilterQuery.swift in Sources */,
 				04B8AB5A1BF18D8D00ED19CA /* ExtraType.swift in Sources */,
 				04C23BF61C0C088A006722ED /* SubtitleProfile.swift in Sources */,
 				88CF7E591BC5BF8C00A33B72 /* QueryStringDictionary.swift in Sources */,

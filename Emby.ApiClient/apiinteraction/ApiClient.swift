@@ -442,7 +442,7 @@ public class ApiClient: BaseApiClient {
         getItemsFromUrl(url: url, success: success, failure: failure)
     }
     
-    public func getEpisodesAsync(query: EpisodeQuery, success: @escaping ([BaseItemDto]) -> Void, failure: @escaping (EmbyError) -> Void) {
+    public func getEpisodesAsync(query: EpisodeQuery, success: @escaping (QueryResult<BaseItemDto>) -> Void, failure: @escaping (EmbyError) -> Void) {
         let dict = QueryStringDictionary()
         
         dict.addIfNotNil("Season", value: query.seasonNumber)
